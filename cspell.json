@@ -1,0 +1,13 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": ["html", "node", "tooling", "typescript"],
+  "dictionaryDefinitions": [
+    {
+      "name": "tooling",
+      "path": "./.cspell/tooling.txt"
+    }
+  ],
+  "ignorePaths": ["*.lockb", ".git", ".turbo", "dist", "node_modules"],
+  "words": ["byteslice"]
+}
