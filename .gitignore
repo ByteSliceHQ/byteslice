@@ -4,3 +4,9 @@ node_modules/
 # macOS
 .DS_Store
 *.pem
+
+# outputs
+dist/
+
+# turborepo
+.turbo/

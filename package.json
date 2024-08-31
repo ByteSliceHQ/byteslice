@@ -4,5 +4,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build:packages": "turbo build --filter './packages/*'"
+  },
+  "devDependencies": {
+    "turbo": "2.1.1"
+  },
   "packageManager": "bun@1.1.26"
 }
