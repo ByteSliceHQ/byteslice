@@ -5,6 +5,10 @@
     "name": "ByteSlice, LLC",
     "url": "https://byteslice.co"
   },
+  "devDependencies": {
+    "@tsconfig/node20": "20.1.4",
+    "typescript": "5.5.4"
+  },
   "publishConfig": {
     "access": "public"
   }
