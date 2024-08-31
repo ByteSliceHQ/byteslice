@@ -1,0 +1,8 @@
+{
+  "name": "@byteslice/monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "bun@1.1.26"
+}
