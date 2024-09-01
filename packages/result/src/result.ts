@@ -1,6 +1,7 @@
-type Success<T> = {
+type Success<T, K extends string = 'result'> = {
   failure?: never
-  result: T
+} & {
+  [Result in K]: T
 }
 
 type Failure<T> = {
