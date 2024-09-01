@@ -1,6 +1,6 @@
 type Success<T> = {
   failure?: never
-  data: T
+  result: T
 }
 
 type Failure<T> = {
