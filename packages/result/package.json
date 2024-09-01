@@ -1,7 +1,6 @@
 {
   "name": "@byteslice/result",
   "version": "0.0.0",
-  "description": "Pattern for structuring the result of an arbitrary operation.",
   "author": {
     "name": "ByteSlice, LLC",
     "url": "https://byteslice.co"
