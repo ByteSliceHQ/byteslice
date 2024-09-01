@@ -11,4 +11,6 @@ type FailureCase = {
   type: string
 }
 
-export type Result<S, F extends FailureCase | Error> = Success<S> | Failure<F>
+type FailureOption = FailureCase | Error
+
+export type Result<S, F extends FailureOption> = Success<S> | Failure<F>
