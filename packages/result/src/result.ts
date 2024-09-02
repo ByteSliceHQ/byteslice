@@ -25,15 +25,19 @@ function ensureError(
   return ex instanceof Error ? ex : fallback
 }
 
+type WithResultOptions = {
+  fallback?: Error
+}
+
 // Wraps operation with structured result (success and failure states).
 export async function withResult<S, F extends FailureOption>(
   operation: S | Promise<S>,
   onError: (error: Error) => F,
-  fallback?: Error,
+  options?: WithResultOptions,
 ): Promise<Result<S, F>> {
   try {
     return { result: await operation }
   } catch (ex) {
-    return { failure: onError(ensureError(ex, fallback)) }
+    return { failure: onError(ensureError(ex, options?.fallback)) }
   }
 }
