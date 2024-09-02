@@ -1,7 +1,6 @@
-type Success<T, K extends string> = {
+type Success<T> = {
   failure?: never
-} & {
-  [ResultKey in K]: T
+  result: T
 }
 
 type Failure<T> = {
@@ -14,9 +13,7 @@ type FailureCase = {
 
 type FailureOption = FailureCase | Error
 
-export type Result<S, F extends FailureOption, K extends string = 'result'> =
-  | Success<S, K>
-  | Failure<F>
+export type Result<S, F extends FailureOption> = Success<S> | Failure<F>
 
 function ensureError(
   ex: unknown,
