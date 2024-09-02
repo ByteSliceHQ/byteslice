@@ -1,6 +1,6 @@
 type Success<T> = {
   failure?: never
-  result: T
+  data: T
 }
 
 type Failure<T> = {
@@ -25,7 +25,7 @@ export async function withResult<S, F extends FailureOption>(
   onError: (error: Error) => F,
 ): Promise<Result<S, F>> {
   try {
-    return { result: await operation }
+    return { data: await operation }
   } catch (ex) {
     return { failure: onError(ensureError(ex)) }
   }
