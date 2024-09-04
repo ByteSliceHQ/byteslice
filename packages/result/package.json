@@ -1,0 +1,26 @@
+{
+  "name": "@byteslice/result",
+  "version": "0.0.0",
+  "author": {
+    "name": "ByteSlice, LLC",
+    "url": "https://byteslice.co"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/result.d.ts",
+      "import": "./dist/result.mjs",
+      "require": "./dist/result.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "20.1.4",
+    "tsup": "8.2.4",
+    "typescript": "5.5.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
