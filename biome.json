@@ -6,6 +6,10 @@
   "linter": {
     "rules": {
       "recommended": true,
+      "correctness": {
+        "noUnusedImports": "warn",
+        "noUnusedVariables": "warn"
+      },
       "performance": {
         "noBarrelFile": "warn"
       }
