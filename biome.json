@@ -1,7 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "files": {
-    "ignore": ["**/package.json", ".tsup/", ".turbo/", "dist/"]
+    "ignore": ["**/package.json", ".turbo/", "dist/"]
   },
   "linter": {
     "rules": {
