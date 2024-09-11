@@ -6,21 +6,21 @@
   ],
   "scripts": {
     "build:packages": "turbo build --filter './packages/*'",
-    "ci:check": "bun install --frozen-lockfile & biome ci . & bun sort-manifests --check & cspell --dot .",
-    "ci:fix": "biome check --write . & bun sort-manifests",
-    "ci:publish": "bun build:packages && changeset publish && git push --follow-tags",
+    "ci:publish": "bun run build:packages && changeset publish && git push --follow-tags",
     "ci:version": "changeset version",
     "clean": "rimraf --glob **/.turbo **/dist **/node_modules",
+    "code:check": "bun install --frozen-lockfile && biome ci . & bun run sort-manifests --check & cspell --dot .",
+    "code:fix": "biome check --write . & bun run sort-manifests",
     "sort-manifests": "sort-package-json package.json packages/*/package.json"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@changesets/changelog-git": "0.2.0",
-    "@changesets/cli": "2.27.7",
+    "@changesets/cli": "2.27.8",
     "cspell": "8.14.2",
     "rimraf": "6.0.1",
     "sort-package-json": "2.10.1",
     "turbo": "2.1.1"
   },
-  "packageManager": "bun@1.1.26"
+  "packageManager": "bun@1.1.27"
 }
