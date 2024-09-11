@@ -22,5 +22,14 @@ jobs:
         with:
           bun-version-file: package.json
 
-      - name: Run code check
-        run: bun run ci:check
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Analyze code
+        run: bun biome ci .
+
+      - name: Check manifest sorting
+        run: bun run sort-manifests --check
+
+      - name: Check spelling
+        run: bun cspell --dot .
