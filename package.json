@@ -6,11 +6,11 @@
   ],
   "scripts": {
     "build:packages": "turbo build --filter './packages/*'",
-    "ci:check": "bun install --frozen-lockfile && biome ci . && bun run sort-manifests --check && cspell --dot .",
-    "ci:fix": "biome check --write . & bun run sort-manifests",
     "ci:publish": "bun run build:packages && changeset publish && git push --follow-tags",
     "ci:version": "changeset version",
     "clean": "rimraf --glob **/.turbo **/dist **/node_modules",
+    "code:check": "bun install --frozen-lockfile && biome ci . & bun run sort-manifests --check & cspell --dot .",
+    "code:fix": "biome check --write . & bun run sort-manifests",
     "sort-manifests": "sort-package-json package.json packages/*/package.json"
   },
   "devDependencies": {
