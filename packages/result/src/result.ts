@@ -19,15 +19,13 @@ function ensureError(ex: unknown): Error {
   return ex instanceof Error ? ex : new Error('Something went wrong')
 }
 
-type Hooks = {
-  onException?: (ex: unknown) => Error
-}
-
 /** Wraps operation with structured result (success and failure states). */
 export async function withResult<S, F extends FailureOption = Error>(
   operation: S | Promise<S>,
   onError: (error: Error) => F,
-  hooks?: Hooks,
+  hooks?: {
+    onException?: (ex: unknown) => Error
+  },
 ): Promise<Result<S, F>> {
   try {
     return { data: await operation }
