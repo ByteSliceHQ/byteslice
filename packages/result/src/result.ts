@@ -19,7 +19,7 @@ function ensureError(ex: unknown): Error {
   return ex instanceof Error ? ex : new Error('Something went wrong')
 }
 
-// Wraps operation with structured result (success and failure states).
+/** Wraps operation with structured result (success and failure states). */
 export async function withResult<S, F extends FailureOption = Error>(
   operation: S | Promise<S>,
   onError: (error: Error) => F,
