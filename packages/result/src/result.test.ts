@@ -25,4 +25,26 @@ describe('withResult', () => {
       }
     })
   })
+
+  describe('exceptions', () => {
+    const error = new Error('uh-oh')
+
+    it('should wrap exception from synchronous operation', async () => {
+      const operation = () => {
+        throw error
+      }
+      const result = await withResult(operation(), (err) => err)
+
+      expect(result.failure).toEqual(error)
+    })
+
+    it('should wrap exception from asynchronous operation', async () => {
+      const operation = async () => {
+        throw error
+      }
+      const result = await withResult(operation(), (err) => err)
+
+      expect(result.failure).toEqual(error)
+    })
+  })
 })
