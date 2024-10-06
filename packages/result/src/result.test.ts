@@ -11,7 +11,7 @@ describe('withResult', () => {
       label: 'should wrap asynchronous operation',
       operation: async () => true,
     },
-  ])('operations', ({ label, operation }) => {
+  ])('success', ({ label, operation }) => {
     it(label, async () => {
       const result = await withResult(operation, (err) => err)
 
@@ -27,18 +27,18 @@ describe('withResult', () => {
 
   describe.each([
     {
-      label: 'should wrap exception from synchronous operation',
+      label: 'should wrap synchronous operation',
       operation: () => {
         throw error
       },
     },
     {
-      label: 'should wrap exception from asynchronous operation',
+      label: 'should wrap asynchronous operation',
       operation: async () => {
         throw error
       },
     },
-  ])('exceptions', ({ label, operation }) => {
+  ])('failure', ({ label, operation }) => {
     it(label, async () => {
       const result = await withResult(operation, (err) => err)
 
