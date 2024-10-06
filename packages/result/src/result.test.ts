@@ -2,20 +2,17 @@ import { describe, expect, it } from 'bun:test'
 import { withResult } from './result'
 
 describe('withResult', () => {
-  describe('operations', () => {
-    it('should wrap synchronous operation', async () => {
-      const operation = () => true
-      const result = await withResult(operation(), (err) => err)
-
-      expect(result.failure).toBeUndefined()
-
-      if (!result.failure) {
-        expect(result.data).toBeTrue()
-      }
-    })
-
-    it('should wrap asynchronous operation', async () => {
-      const operation = async () => true
+  describe.each([
+    {
+      label: 'should wrap synchronous operation',
+      operation: () => true,
+    },
+    {
+      label: 'should wrap asynchronous operation',
+      operation: async () => true,
+    },
+  ])('operations', ({ label, operation }) => {
+    it(label, async () => {
       const result = await withResult(operation(), (err) => err)
 
       expect(result.failure).toBeUndefined()
@@ -26,22 +23,23 @@ describe('withResult', () => {
     })
   })
 
-  describe('exceptions', () => {
-    const error = new Error('uh-oh')
+  const error = new Error('uh-oh')
 
-    it('should wrap exception from synchronous operation', async () => {
-      const operation = () => {
+  describe.each([
+    {
+      label: 'should wrap exception from synchronous operation',
+      operation: () => {
         throw error
-      }
-      const result = await withResult(operation(), (err) => err)
-
-      expect(result.failure).toEqual(error)
-    })
-
-    it('should wrap exception from asynchronous operation', async () => {
-      const operation = async () => {
+      },
+    },
+    {
+      label: 'should wrap exception from asynchronous operation',
+      operation: async () => {
         throw error
-      }
+      },
+    },
+  ])('exceptions', ({ label, operation }) => {
+    it(label, async () => {
       const result = await withResult(operation(), (err) => err)
 
       expect(result.failure).toEqual(error)
