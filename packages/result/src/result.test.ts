@@ -13,7 +13,7 @@ describe('withResult', () => {
     },
   ])('operations', ({ label, operation }) => {
     it(label, async () => {
-      const result = await withResult(operation(), (err) => err)
+      const result = await withResult(operation, (err) => err)
 
       expect(result.failure).toBeUndefined()
 
@@ -40,7 +40,7 @@ describe('withResult', () => {
     },
   ])('exceptions', ({ label, operation }) => {
     it(label, async () => {
-      const result = await withResult(operation(), (err) => err)
+      const result = await withResult(operation, (err) => err)
 
       expect(result.failure).toEqual(error)
     })
