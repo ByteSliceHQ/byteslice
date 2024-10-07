@@ -1,5 +1,12 @@
 # @byteslice/result
 
+## 0.1.0
+
+### Minor Changes
+
+- 1190572: Executed wrapped operation within wrapper.
+- da088d8: Added optional exception hook to result wrapper.
+
 ## 0.0.1
 
 ### Patch Changes
