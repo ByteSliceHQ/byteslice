@@ -9,7 +9,9 @@ describe('withResult', () => {
     },
     {
       label: 'should wrap asynchronous operation',
-      operation: async () => true,
+      operation: async () => {
+        return await Promise.resolve(true)
+      },
     },
   ])('success', ({ label, operation }) => {
     it(label, async () => {
@@ -35,7 +37,7 @@ describe('withResult', () => {
     {
       label: 'should wrap asynchronous operation',
       operation: async () => {
-        throw error
+        await Promise.reject(error)
       },
     },
   ])('failure', ({ label, operation }) => {
