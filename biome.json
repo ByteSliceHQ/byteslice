@@ -12,6 +12,9 @@
       },
       "performance": {
         "noBarrelFile": "warn"
+      },
+      "suspicious": {
+        "useAwait": "error"
       }
     }
   },
