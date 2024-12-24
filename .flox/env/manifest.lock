@@ -2,6 +2,12 @@
   "lockfile-version": 1,
   "manifest": {
     "version": 1,
+    "install": {
+      "bun": {
+        "pkg-path": "bun",
+        "version": "1.1.38"
+      }
+    },
     "hook": {},
     "profile": {},
     "options": {
@@ -17,5 +23,122 @@
       "semver": {}
     }
   },
-  "packages": []
+  "packages": [
+    {
+      "attr_path": "bun",
+      "broken": false,
+      "derivation": "/nix/store/x62wjgds23kpr6f58z3fg6lqqfmm8542-bun-1.1.38.drv",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
+      "install_id": "bun",
+      "license": "[ MIT, LGPL-2.1-only ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "bun-1.1.38",
+      "pname": "bun",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.38",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/gfg0fgcxj2qgrg7ry1hwb9jrvdhz8cjj-bun-1.1.38"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "bun",
+      "broken": false,
+      "derivation": "/nix/store/5ns1v0r10vnpgiiklg1k55d3f92bbkly-bun-1.1.38.drv",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
+      "install_id": "bun",
+      "license": "[ MIT, LGPL-2.1-only ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "bun-1.1.38",
+      "pname": "bun",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.38",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/fsipn69dbv9cddxs58w4d892rjrn5flr-bun-1.1.38"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "bun",
+      "broken": false,
+      "derivation": "/nix/store/49mz8ll2nk0vb0d6g9pylp4h15807ga7-bun-1.1.38.drv",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
+      "install_id": "bun",
+      "license": "[ MIT, LGPL-2.1-only ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "bun-1.1.38",
+      "pname": "bun",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.38",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/qd14gs1iij9l8i03bfn30r604bf434lf-bun-1.1.38"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "bun",
+      "broken": false,
+      "derivation": "/nix/store/pmkv93gh5ijv398az0bwal0alfcnx6pn-bun-1.1.38.drv",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
+      "install_id": "bun",
+      "license": "[ MIT, LGPL-2.1-only ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "name": "bun-1.1.38",
+      "pname": "bun",
+      "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
+      "rev_count": 724962,
+      "rev_date": "2024-12-19T23:01:11Z",
+      "scrape_date": "2024-12-23T03:54:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.38",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/bwy84nyc04012vaddk41xkr28k85zbiz-bun-1.1.38"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
 }
