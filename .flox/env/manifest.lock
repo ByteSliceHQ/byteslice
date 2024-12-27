@@ -8,7 +8,9 @@
         "version": "1.1.38"
       }
     },
-    "hook": {},
+    "hook": {
+      "on-activate": "  echo \"📦 Installing dependencies...\"\n  bun install --frozen-lockfile\n"
+    },
     "profile": {},
     "options": {
       "systems": [
