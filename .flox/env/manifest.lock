@@ -6,6 +6,10 @@
       "bun": {
         "pkg-path": "bun",
         "version": "1.1.42"
+      },
+      "turbo": {
+        "pkg-path": "turbo",
+        "version": "^2.2.3"
       }
     },
     "hook": {
@@ -137,6 +141,122 @@
       ],
       "outputs": {
         "out": "/nix/store/ws04zldxbkg26d4qkwyr4km1zd26mach-bun-1.1.42"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "turbo",
+      "broken": false,
+      "derivation": "/nix/store/1a1n5lnizjxamgr79n19my09mj55fb5m-turbo-2.3.3.drv",
+      "description": "High-performance build system for JavaScript and TypeScript codebases",
+      "install_id": "turbo",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "name": "turbo-2.3.3",
+      "pname": "turbo",
+      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
+      "rev_count": 729082,
+      "rev_date": "2024-12-27T09:21:16Z",
+      "scrape_date": "2024-12-28T03:56:01Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.3.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/k09j2w7na11hl17ilklxivw7gl6vwrwh-turbo-2.3.3"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "turbo",
+      "broken": false,
+      "derivation": "/nix/store/8bdzxbf0y9ysfwrfnv51jagai5v3vvg5-turbo-2.3.3.drv",
+      "description": "High-performance build system for JavaScript and TypeScript codebases",
+      "install_id": "turbo",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "name": "turbo-2.3.3",
+      "pname": "turbo",
+      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
+      "rev_count": 729082,
+      "rev_date": "2024-12-27T09:21:16Z",
+      "scrape_date": "2024-12-28T03:56:01Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.3.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/4bs9rkk3b656k27pq77lh3lgs95dfvrr-turbo-2.3.3"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "turbo",
+      "broken": false,
+      "derivation": "/nix/store/0rcz0abfybmwrlyppni2kc9frv25233a-turbo-2.3.3.drv",
+      "description": "High-performance build system for JavaScript and TypeScript codebases",
+      "install_id": "turbo",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "name": "turbo-2.3.3",
+      "pname": "turbo",
+      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
+      "rev_count": 729082,
+      "rev_date": "2024-12-27T09:21:16Z",
+      "scrape_date": "2024-12-28T03:56:01Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.3.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/vr4hlrsinaijr9kya1c0kcl8pd8i6rlr-turbo-2.3.3"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "turbo",
+      "broken": false,
+      "derivation": "/nix/store/gvf1xnjddcx56pwv2ihyfwzjlx69namh-turbo-2.3.3.drv",
+      "description": "High-performance build system for JavaScript and TypeScript codebases",
+      "install_id": "turbo",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "name": "turbo-2.3.3",
+      "pname": "turbo",
+      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
+      "rev_count": 729082,
+      "rev_date": "2024-12-27T09:21:16Z",
+      "scrape_date": "2024-12-28T03:56:01Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2.3.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/l09ad8b19lmkz6rkhsx9gm9yqwl4x94s-turbo-2.3.3"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
