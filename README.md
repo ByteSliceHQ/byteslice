@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Install [Flox](https://flox.dev/) and run `flox activate` in the root directory. This will activate the project's development environment and install necessary dependencies.
+Install [Flox](https://flox.dev/) and run `flox activate` in the root directory. This will activate the `byteslice` development environment and install necessary dependencies.
 
 ## How to Contribute
 
