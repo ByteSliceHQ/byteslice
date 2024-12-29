@@ -1,4 +1,5 @@
 biomejs
+flox
 lockb
 tsup
 turborepo
