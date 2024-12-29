@@ -16,7 +16,7 @@ version = 1
 ## -------------------------------------------------------------------
 [install]
 bun.pkg-path = "bun"
-bun.version = "1.1.38"
+bun.version = "1.1.42"
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 
