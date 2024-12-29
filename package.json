@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build:packages": "turbo build --filter './packages/*'",
+    "build:packages": "turbo run build --filter './packages/*'",
     "ci:publish": "bun run build:packages && changeset publish && git push --follow-tags",
     "ci:version": "changeset version",
     "clean": "rimraf --glob **/.turbo **/dist **/node_modules",
