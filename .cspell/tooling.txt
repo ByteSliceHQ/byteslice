@@ -3,3 +3,5 @@ flox
 lockb
 tsup
 turborepo
+turbopack
+customerio

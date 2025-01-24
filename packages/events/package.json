@@ -24,6 +24,10 @@
     "build": "tsup",
     "dev": "tsup --watch"
   },
+  "dependencies": {
+    "@customerio/cdp-analytics-browser": "0.3.0",
+    "@customerio/cdp-analytics-node": "0.3.0"
+  },
   "devDependencies": {
     "@tsconfig/node20": "20.1.4",
     "@types/bun": "1.1.14",
@@ -32,9 +36,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@customerio/cdp-analytics-browser": "0.3.0",
-    "@customerio/cdp-analytics-node": "0.3.0"
   }
 }

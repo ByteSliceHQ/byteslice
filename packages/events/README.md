@@ -1,6 +1,6 @@
 # @byteslice/events
 
-Events pachage for ByteSlice customers.
+Events package for ByteSlice customers.
 
 ## Usage
 

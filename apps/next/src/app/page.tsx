@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import { ClientTracking } from '@/components/client-tracking'
 import { identify } from '@byteslice/events/server'
+import Image from 'next/image'
 
 export default function Home() {
   identify('development@byteslice.co')

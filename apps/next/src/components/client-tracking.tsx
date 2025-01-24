@@ -1,6 +1,6 @@
 'use client'
 
-import { track, identify } from '@byteslice/events/client'
+import { identify, track } from '@byteslice/events/client'
 
 export function ClientTracking() {
   identify('development2@byteslice.co')

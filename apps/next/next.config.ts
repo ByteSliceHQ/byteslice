@@ -1,5 +1,5 @@
-import type { NextConfig } from 'next'
 import { rewrites } from '@byteslice/events'
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   // biome-ignore lint/suspicious/useAwait: Does not apply here.
