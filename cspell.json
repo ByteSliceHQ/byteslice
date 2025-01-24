@@ -8,6 +8,15 @@
       "path": "./.cspell/tooling.txt"
     }
   ],
-  "ignorePaths": ["*.lockb", ".flox", ".git", ".turbo", "dist", "node_modules"],
+  "ignorePaths": [
+    "*.lockb",
+    ".flox",
+    ".git",
+    ".turbo",
+    "dist",
+    "node_modules",
+    ".next",
+    ".gitignore"
+  ],
   "words": ["byteslice"]
 }

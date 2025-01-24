@@ -1,0 +1,9 @@
+namespace NodeJS {
+  interface ProcessEnv {
+    BYTESLICE_EVENTS_KEY: string
+    NEXT_PUBLIC_BYTESLICE_EVENTS_KEY: string
+    NEXT_PUBLIC_BYTESLICE_EVENTS_HOST: string
+    NEXT_PUBLIC_BYTESLICE_EVENTS_PROTOCOL: string
+    NEXT_PUBLIC_BYTESLICE_EVENTS_CLIENT: string
+  }
+}
