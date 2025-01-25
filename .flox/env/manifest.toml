@@ -10,6 +10,10 @@ bun.version = "1.1.42"
 on-activate = '''
   echo "📦 Installing dependencies..."
   bun install --frozen-lockfile
+
+  echo -e "\n🚀 Development Commands"
+  echo -e "- Run all tasks\t\t\033[34mbun dev\033[0m"
+  echo -e "- Start playground app\t\033[34mbun dev:playground\033[0m"
 '''
 
 [options]
