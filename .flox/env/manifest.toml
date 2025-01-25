@@ -3,8 +3,6 @@ version = 1
 [install]
 bun.pkg-path = "bun"
 bun.version = "1.1.42"
-turbo.pkg-path = "turbo"
-turbo.version = "2.3.3"
 
 [hook]
 on-activate = '''
