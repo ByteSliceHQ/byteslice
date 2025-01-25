@@ -4,6 +4,12 @@
 
 ### Minor Changes
 
+- ed0000e: Created playground application.
+
+## 0.1.0
+
+### Minor Changes
+
 - 2e47c48: Initialized playground app.
 
 ### Patch Changes
