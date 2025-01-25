@@ -1,4 +1,4 @@
-# next
+# @byteslice/playground
 
 ## 0.1.1
 
@@ -23,5 +23,4 @@
 
 - Updated dependencies [2e47c48]
 - Updated dependencies [2e47c48]
-  - next@0.1.0
   - @byteslice/events@0.1.0
