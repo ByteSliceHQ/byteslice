@@ -1,7 +1,14 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
   "files": {
-    "ignore": ["**/package.json", ".turbo/", "dist/", ".next/"]
+    "ignore": [
+      "**/package.json",
+      ".flox/cache/",
+      ".next/",
+      ".turbo/",
+      "dist/",
+      "nix/"
+    ]
   },
   "linter": {
     "rules": {
