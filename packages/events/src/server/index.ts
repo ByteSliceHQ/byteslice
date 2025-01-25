@@ -1,5 +1,5 @@
 import type { EventProperties } from '@customerio/cdp-analytics-browser'
-import { Analytics } from '@customerio/cdp-analytics-node'
+import { Analytics, type PageParams } from '@customerio/cdp-analytics-node'
 
 const analytics = new Analytics({
   writeKey: process.env.BYTESLICE_EVENTS_KEY,
@@ -20,4 +20,10 @@ export function track(event: string, properties?: EventProperties) {
     event,
     properties,
   })
+}
+
+// Server side page tracking requires the developer to build out the parameters themselves
+// since there is no native browser API to gather page information.
+export function page(params: PageParams) {
+  return analytics.page(params)
 }
