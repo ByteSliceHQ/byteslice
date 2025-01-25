@@ -1,5 +1,12 @@
 # next
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [d67150c]
+  - @byteslice/events@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes
