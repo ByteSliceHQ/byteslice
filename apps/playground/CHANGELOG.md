@@ -1,5 +1,11 @@
 # @byteslice/playground
 
+## 0.1.2
+
+### Patch Changes
+
+- b0617d6: Specified exact '@byteslice/events' dependency version.
+
 ## 0.1.1
 
 ### Patch Changes
