@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "op run --no-masking --env-file=.env.development -- next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
