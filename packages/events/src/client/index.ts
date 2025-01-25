@@ -27,3 +27,9 @@ export function identify(userId: string) {
 export function track(event: string, properties?: EventProperties) {
   return analytics.track(event, properties)
 }
+
+// Client side page tracking uses the browser's native navigation APIs to gather page information
+// so no need bothering with the parameters.
+export function page() {
+  return analytics.page()
+}
