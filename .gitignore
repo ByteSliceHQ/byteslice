@@ -8,5 +8,13 @@ node_modules/
 # outputs
 dist/
 
+# secrets
+.env*.local
+
 # turborepo
 .turbo/
+
+# vercel
+.next/
+.vercel/
+next-env.d.ts
