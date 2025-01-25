@@ -1,6 +1,8 @@
 version = 1
 
 [install]
+_1password.pkg-path = "_1password"
+_1password.version = "1password-cli-2.30.3"
 bun.pkg-path = "bun"
 bun.version = "1.1.42"
 
