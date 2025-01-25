@@ -3,17 +3,17 @@
   "manifest": {
     "version": 1,
     "install": {
+      "_1password": {
+        "pkg-path": "_1password",
+        "version": "1password-cli-2.30.3"
+      },
       "bun": {
         "pkg-path": "bun",
         "version": "1.1.42"
-      },
-      "turbo": {
-        "pkg-path": "turbo",
-        "version": "2.3.3"
       }
     },
     "hook": {
-      "on-activate": "  echo \"📦 Installing dependencies...\"\n  bun install --frozen-lockfile\n"
+      "on-activate": "  echo \"📦 Installing dependencies...\"\n  bun install --frozen-lockfile\n\n  echo -e \"\\n🚀 Development Commands\"\n  echo -e \"- Run all tasks\\t\\t\\033[34mbun dev\\033[0m\"\n  echo -e \"- Start playground app\\t\\033[34mbun dev:playground\\033[0m\"\n"
     },
     "profile": {},
     "options": {
@@ -31,19 +31,135 @@
   },
   "packages": [
     {
+      "attr_path": "_1password",
+      "broken": false,
+      "derivation": "/nix/store/vj5pg7bdfvi4m8x4rkp1k4xr1nrpdjvv-1password-cli-2.30.3.drv",
+      "description": "1Password command-line tool",
+      "install_id": "_1password",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "name": "1password-cli-2.30.3",
+      "pname": "_1password",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1password-cli-2.30.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/311ibgh3b8zrmmqdjhnxmpm8bm9xmvfc-1password-cli-2.30.3"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "_1password",
+      "broken": false,
+      "derivation": "/nix/store/5mif8k3aznqj3ybwr8bx2fb64k82ndi8-1password-cli-2.30.3.drv",
+      "description": "1Password command-line tool",
+      "install_id": "_1password",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "name": "1password-cli-2.30.3",
+      "pname": "_1password",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1password-cli-2.30.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/0kfw7wfj6x9swrnrm1d90mkmgbg525wf-1password-cli-2.30.3"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "_1password",
+      "broken": false,
+      "derivation": "/nix/store/xjhfvd3dd2lspxmh5vrm1if562ivalih-1password-cli-2.30.3.drv",
+      "description": "1Password command-line tool",
+      "install_id": "_1password",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "name": "1password-cli-2.30.3",
+      "pname": "_1password",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1password-cli-2.30.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/4yr9dcl6rqnf4hfq9id9llnrwnbxa8p7-1password-cli-2.30.3"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "_1password",
+      "broken": false,
+      "derivation": "/nix/store/1iq081xyjkbc78czx88p4hfsqsgmh2vs-1password-cli-2.30.3.drv",
+      "description": "1Password command-line tool",
+      "install_id": "_1password",
+      "license": "Unfree",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "name": "1password-cli-2.30.3",
+      "pname": "_1password",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": true,
+      "version": "1password-cli-2.30.3",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/l2fncs935nlzys9fx8hrbs6kg71402jj-1password-cli-2.30.3"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
       "attr_path": "bun",
       "broken": false,
       "derivation": "/nix/store/0k41x36pkcaf28xilii9xdd8jr0a692k-bun-1.1.42.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
       "name": "bun-1.1.42",
       "pname": "bun",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
       "stabilities": [
         "unstable"
       ],
@@ -66,13 +182,13 @@
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
       "name": "bun-1.1.42",
       "pname": "bun",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
       "stabilities": [
         "unstable"
       ],
@@ -95,13 +211,13 @@
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
       "name": "bun-1.1.42",
       "pname": "bun",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
       "stabilities": [
         "unstable"
       ],
@@ -124,13 +240,13 @@
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
       "name": "bun-1.1.42",
       "pname": "bun",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
+      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
+      "rev_count": 736170,
+      "rev_date": "2025-01-10T15:43:18Z",
+      "scrape_date": "2025-01-13T03:35:32Z",
       "stabilities": [
         "unstable"
       ],
@@ -141,122 +257,6 @@
       ],
       "outputs": {
         "out": "/nix/store/ws04zldxbkg26d4qkwyr4km1zd26mach-bun-1.1.42"
-      },
-      "system": "x86_64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "turbo",
-      "broken": false,
-      "derivation": "/nix/store/1a1n5lnizjxamgr79n19my09mj55fb5m-turbo-2.3.3.drv",
-      "description": "High-performance build system for JavaScript and TypeScript codebases",
-      "install_id": "turbo",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
-      "name": "turbo-2.3.3",
-      "pname": "turbo",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "2.3.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/k09j2w7na11hl17ilklxivw7gl6vwrwh-turbo-2.3.3"
-      },
-      "system": "aarch64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "turbo",
-      "broken": false,
-      "derivation": "/nix/store/8bdzxbf0y9ysfwrfnv51jagai5v3vvg5-turbo-2.3.3.drv",
-      "description": "High-performance build system for JavaScript and TypeScript codebases",
-      "install_id": "turbo",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
-      "name": "turbo-2.3.3",
-      "pname": "turbo",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "2.3.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/4bs9rkk3b656k27pq77lh3lgs95dfvrr-turbo-2.3.3"
-      },
-      "system": "aarch64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "turbo",
-      "broken": false,
-      "derivation": "/nix/store/0rcz0abfybmwrlyppni2kc9frv25233a-turbo-2.3.3.drv",
-      "description": "High-performance build system for JavaScript and TypeScript codebases",
-      "install_id": "turbo",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
-      "name": "turbo-2.3.3",
-      "pname": "turbo",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "2.3.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/vr4hlrsinaijr9kya1c0kcl8pd8i6rlr-turbo-2.3.3"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "turbo",
-      "broken": false,
-      "derivation": "/nix/store/gvf1xnjddcx56pwv2ihyfwzjlx69namh-turbo-2.3.3.drv",
-      "description": "High-performance build system for JavaScript and TypeScript codebases",
-      "install_id": "turbo",
-      "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=634fd46801442d760e09493a794c4f15db2d0cbb",
-      "name": "turbo-2.3.3",
-      "pname": "turbo",
-      "rev": "634fd46801442d760e09493a794c4f15db2d0cbb",
-      "rev_count": 729082,
-      "rev_date": "2024-12-27T09:21:16Z",
-      "scrape_date": "2024-12-28T03:56:01Z",
-      "stabilities": [
-        "unstable"
-      ],
-      "unfree": false,
-      "version": "2.3.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/l09ad8b19lmkz6rkhsx9gm9yqwl4x94s-turbo-2.3.3"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
