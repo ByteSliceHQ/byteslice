@@ -1,7 +1,7 @@
 import {
   AnalyticsBrowser,
-  type UserTraits,
   type EventProperties,
+  type UserTraits,
 } from '@customerio/cdp-analytics-browser'
 
 const analytics = AnalyticsBrowser.load(
