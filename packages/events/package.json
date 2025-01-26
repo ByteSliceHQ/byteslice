@@ -18,6 +18,10 @@
     "./client": {
       "import": "./dist/client/index.js",
       "require": "./dist/client/index.cjs"
+    },
+    "./analytics": {
+      "import": "./dist/analytics.js",
+      "require": "./dist/analytics.cjs"
     }
   },
   "scripts": {
@@ -26,10 +30,11 @@
   },
   "dependencies": {
     "@customerio/cdp-analytics-browser": "0.3.0",
-    "@customerio/cdp-analytics-node": "0.3.0"
+    "@customerio/cdp-analytics-node": "0.3.0",
+    "@vercel/analytics": "1.4.1"
   },
   "devDependencies": {
-    "@tsconfig/node20": "20.1.4",
+    "@tsconfig/create-react-app": "2.0.5",
     "@types/bun": "1.1.14",
     "tsup": "8.2.4",
     "typescript": "5.5.4"
