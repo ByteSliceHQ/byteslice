@@ -16,4 +16,8 @@ export const rewrites: NextRewrites[] = [
     source: '/v1/i',
     destination: 'https://cdp.customer.io/v1/i',
   },
+  {
+    source: '/v1/p',
+    destination: 'https://cdp.customer.io/v1/p',
+  },
 ]
