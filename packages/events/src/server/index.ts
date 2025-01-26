@@ -1,14 +1,18 @@
-import type { EventProperties } from '@customerio/cdp-analytics-browser'
+import type {
+  EventProperties,
+  UserTraits,
+} from '@customerio/cdp-analytics-browser'
 import { Analytics, type PageParams } from '@customerio/cdp-analytics-node'
 
 const analytics = new Analytics({
   writeKey: process.env.BYTESLICE_EVENTS_KEY,
 })
 
-export function identify(userId: string) {
+export function identify(userId: string, traits?: UserTraits) {
   return analytics.identify({
     userId,
     traits: {
+      ...traits,
       objectId: process.env.NEXT_PUBLIC_BYTESLICE_EVENTS_CLIENT,
     },
   })

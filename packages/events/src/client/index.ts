@@ -1,5 +1,6 @@
 import {
   AnalyticsBrowser,
+  type UserTraits,
   type EventProperties,
 } from '@customerio/cdp-analytics-browser'
 
@@ -18,8 +19,9 @@ const analytics = AnalyticsBrowser.load(
   },
 )
 
-export function identify(userId: string) {
+export function identify(userId: string, traits?: UserTraits) {
   return analytics.identify(userId, {
+    ...traits,
     objectId: process.env.NEXT_PUBLIC_BYTESLICE_EVENTS_CLIENT,
   })
 }
