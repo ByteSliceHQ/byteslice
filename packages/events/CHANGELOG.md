@@ -1,5 +1,11 @@
 # @byteslice/events
 
+## 0.3.0
+
+### Minor Changes
+
+- 399b1dd: Add user traits and page analytics proxy.
+
 ## 0.2.0
 
 ### Minor Changes
