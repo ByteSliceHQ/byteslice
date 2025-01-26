@@ -22,7 +22,8 @@ export default defineConfig([
     dts: true,
   },
   {
-    entry: ['src/analytics.tsx'],
+    entry: ['src/react/index.tsx'],
+    outDir: 'dist/react',
     external: ['react', 'react-dom'],
     format: ['esm'],
     sourcemap: true,

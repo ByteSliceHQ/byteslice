@@ -19,9 +19,9 @@
       "import": "./dist/client/index.js",
       "require": "./dist/client/index.cjs"
     },
-    "./analytics": {
-      "import": "./dist/analytics.js",
-      "require": "./dist/analytics.cjs"
+    "./react": {
+      "import": "./dist/react/index.js",
+      "require": "./dist/react/index.cjs"
     }
   },
   "scripts": {
