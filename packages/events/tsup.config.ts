@@ -21,4 +21,14 @@ export default defineConfig([
     format: ['esm', 'cjs'],
     dts: true,
   },
+  {
+    entry: ['src/react/index.tsx'],
+    outDir: 'dist/react',
+    external: ['react', 'react-dom'],
+    format: ['esm'],
+    sourcemap: true,
+    dts: true,
+    bundle: false,
+    target: 'esnext',
+  },
 ])
