@@ -1,5 +1,16 @@
 # @byteslice/playground
 
+## 0.2.0
+
+### Minor Changes
+
+- 8fa39cf: Added ByteSlice analytics.
+
+### Patch Changes
+
+- Updated dependencies [8fa39cf]
+  - @byteslice/events@0.4.0
+
 ## 0.1.3
 
 ### Patch Changes
