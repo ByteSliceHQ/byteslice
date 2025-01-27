@@ -1,5 +1,11 @@
 # @byteslice/events
 
+## 0.4.0
+
+### Minor Changes
+
+- 8fa39cf: Added ByteSlice analytics.
+
 ## 0.3.0
 
 ### Minor Changes
