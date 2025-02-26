@@ -2,6 +2,8 @@
 
 A lightweight TypeScript utility for wrapping operations in a structured result type, eliminating the need for extensive try/catch or error-handling boilerplate. This package allows you to represent both **success** and **failure** outcomes in a predictable, type-safe manner.
 
+Built by the team at [ByteSlice](https://byteslice.co).
+
 ## Installation
 
 ```bash
