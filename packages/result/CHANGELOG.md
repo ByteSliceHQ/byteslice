@@ -1,5 +1,11 @@
 # @byteslice/result
 
+## 0.2.0
+
+### Minor Changes
+
+- 43ea114: Released initial documentation.
+
 ## 0.1.0
 
 ### Minor Changes
