@@ -4,6 +4,15 @@ A lightweight TypeScript utility for wrapping operations in a structured result 
 
 Built by the team at [ByteSlice](https://byteslice.co).
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Overview](#overview)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Installation
 
 ```bash
