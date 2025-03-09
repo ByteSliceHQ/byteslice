@@ -1,5 +1,11 @@
 # @byteslice/result
 
+## 0.2.1
+
+### Patch Changes
+
+- a02e44d: Added "motivation" section to documentation.
+
 ## 0.2.0
 
 ### Minor Changes
