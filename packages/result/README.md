@@ -1,8 +1,10 @@
 # @byteslice/result
 
-A lightweight TypeScript utility for wrapping operations in a structured result type, eliminating the need for extensive try/catch or error-handling boilerplate. This package allows you to represent both **success** and **failure** outcomes in a predictable, type-safe manner.
+A lightweight TypeScript utility for wrapping operations in a structured `Result` type, mitigating the need for exception-handling boilerplate.
 
-Built by the team at [ByteSlice](https://byteslice.co).
+This package enables developers to clearly represent both _success_ and _failure_ states, ensuring a predictable and type-safe approach to managing operation results.
+
+🍕 Built by the team at [ByteSlice](https://byteslice.co).
 
 ## Table of Contents
 
