@@ -1,5 +1,11 @@
 # @byteslice/result
 
+## 0.2.2
+
+### Patch Changes
+
+- 28bb191: Added project homepage to manifest.
+
 ## 0.2.1
 
 ### Patch Changes
