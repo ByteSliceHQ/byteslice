@@ -1,8 +1,20 @@
 # @byteslice/result
 
-A lightweight TypeScript utility for wrapping operations in a structured result type, eliminating the need for extensive try/catch or error-handling boilerplate. This package allows you to represent both **success** and **failure** outcomes in a predictable, type-safe manner.
+A lightweight TypeScript utility for wrapping operations in a structured `Result` type, mitigating the need for exception-handling boilerplate.
 
-Built by the team at [ByteSlice](https://byteslice.co).
+This package enables developers to clearly represent both _success_ and _failure_ states, ensuring a predictable and type-safe approach to managing operation results.
+
+🍕 Built by the team at [ByteSlice](https://byteslice.co).
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Motivation](#motivation)
+- [Overview](#overview)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
@@ -15,6 +27,39 @@ pnpm add @byteslice/result
 # or
 bun add @byteslice/result
 ```
+
+## Motivation
+
+To fully understand the purpose and application of this package, it's essential to provide some context.
+
+### Errors vs. Exceptions
+
+Exceptions are particularly useful in scenarios where a program must terminate quickly in response to serious problems or unforeseen circumstances. As the term suggests, they signify _exceptions_ that arise when standard operations are disrupted by the unexpected.
+
+In TypeScript, any value can be "thrown" as an exception: errors, strings, numbers, you name it. This is why "caught" exceptions are type `unknown`.
+
+Errors, on the other hand, are values that represent anticipated—albeit undesired—behavior. They denote an error state and typically contain a descriptive message that explains the nature of the problem.
+
+### Function Signatures
+
+TypeScript—while providing excellent type safety—lacks a built-in mechanism to indicate when a function might throw an exception.
+
+Consider the following function. While the implementation indicates that an exception could be thrown, the type signature fails to convey this information.
+```ts
+function fetchUser(id: string): User {
+  throw new Error("Oh, no! Mr. Bill!")
+}
+```
+
+This becomes especially problematic if the developer is not familiar with the underlying implementation. They may need to resort to defensive try/catch blocks or risk having exceptions propagate unexpectedly.
+
+### Success and Failure States
+
+Every operation can lead to one of two possible outcomes: success or failure. Establishing a standard pattern to represent both of these potential states is crucial.
+
+The `@byteslice/result` package provides this pattern through a `Result` type that effectively captures these two distinct states.
+
+Instead of an operation simply returning a value (indicating success) or throwing an exception (indicating failure), it can return a type-safe `Result` that represents either outcome.
 
 ## Overview
 
