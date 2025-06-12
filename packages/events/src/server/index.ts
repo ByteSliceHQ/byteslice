@@ -1,6 +1,6 @@
+import { type Result, withResult } from '@byteslice/result'
 import { createClient } from '@supabase/supabase-js'
 import { Resend } from 'resend'
-import { withResult, type Result } from '@byteslice/result'
 import type { EventProperties, PageParams } from './types'
 
 if (
