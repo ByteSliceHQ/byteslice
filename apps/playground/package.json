@@ -1,6 +1,6 @@
 {
   "name": "@byteslice/playground",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "dev": "op run --no-masking --env-file=.env.development -- next dev --turbopack",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@byteslice/events": "workspace:0.4.1",
+    "@byteslice/events": "workspace:0.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "next": "15.1.3"

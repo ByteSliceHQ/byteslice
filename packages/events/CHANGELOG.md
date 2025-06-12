@@ -1,5 +1,11 @@
 # @byteslice/events
 
+## 0.5.0
+
+### Minor Changes
+
+- 09e3dc3: Replaced Customer.io with Supabase and Resend.
+
 ## 0.4.1
 
 ### Patch Changes
