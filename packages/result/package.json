@@ -1,6 +1,12 @@
 {
   "name": "@byteslice/result",
-  "version": "0.2.0",
+  "version": "0.2.2",
+  "homepage": "https://github.com/ByteSliceHQ/byteslice/tree/main/packages/result#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ByteSliceHQ/byteslice.git",
+    "directory": "packages/result"
+  },
   "author": {
     "name": "ByteSlice, LLC",
     "url": "https://byteslice.co"
