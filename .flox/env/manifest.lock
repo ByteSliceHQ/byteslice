@@ -5,11 +5,11 @@
     "install": {
       "_1password": {
         "pkg-path": "_1password",
-        "version": "1password-cli-2.30.3"
+        "version": "2.30.3"
       },
       "bun": {
         "pkg-path": "bun",
-        "version": "1.1.42"
+        "version": "1.2.4"
       }
     },
     "hook": {
@@ -33,27 +33,28 @@
     {
       "attr_path": "_1password",
       "broken": false,
-      "derivation": "/nix/store/vj5pg7bdfvi4m8x4rkp1k4xr1nrpdjvv-1password-cli-2.30.3.drv",
+      "derivation": "/nix/store/9290cl1fzxz3wzxwlwiyw5q1rnv78f3n-1password-cli-2.30.3.drv",
       "description": "1Password command-line tool",
       "install_id": "_1password",
       "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
       "name": "1password-cli-2.30.3",
       "pname": "_1password",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": true,
-      "version": "1password-cli-2.30.3",
+      "version": "2.30.3",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/311ibgh3b8zrmmqdjhnxmpm8bm9xmvfc-1password-cli-2.30.3"
+        "out": "/nix/store/n0jgflq9hkylgfvxfrc9ris4lgbza738-1password-cli-2.30.3"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -62,27 +63,28 @@
     {
       "attr_path": "_1password",
       "broken": false,
-      "derivation": "/nix/store/5mif8k3aznqj3ybwr8bx2fb64k82ndi8-1password-cli-2.30.3.drv",
+      "derivation": "/nix/store/wwa0j53z5afs65r8sl9vh8689rwzjffz-1password-cli-2.30.3.drv",
       "description": "1Password command-line tool",
       "install_id": "_1password",
       "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
       "name": "1password-cli-2.30.3",
       "pname": "_1password",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": true,
-      "version": "1password-cli-2.30.3",
+      "version": "2.30.3",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/0kfw7wfj6x9swrnrm1d90mkmgbg525wf-1password-cli-2.30.3"
+        "out": "/nix/store/w2qm1zj4hip9xijsnvjin2fiwqx4kdz9-1password-cli-2.30.3"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -91,27 +93,28 @@
     {
       "attr_path": "_1password",
       "broken": false,
-      "derivation": "/nix/store/xjhfvd3dd2lspxmh5vrm1if562ivalih-1password-cli-2.30.3.drv",
+      "derivation": "/nix/store/3avy67fd3w6aaxwfls2rip1s0mmmfj40-1password-cli-2.30.3.drv",
       "description": "1Password command-line tool",
       "install_id": "_1password",
       "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
       "name": "1password-cli-2.30.3",
       "pname": "_1password",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": true,
-      "version": "1password-cli-2.30.3",
+      "version": "2.30.3",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/4yr9dcl6rqnf4hfq9id9llnrwnbxa8p7-1password-cli-2.30.3"
+        "out": "/nix/store/c00fjp4hykbgy2ddpqg8rgpc3k1mjc3z-1password-cli-2.30.3"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -120,27 +123,28 @@
     {
       "attr_path": "_1password",
       "broken": false,
-      "derivation": "/nix/store/1iq081xyjkbc78czx88p4hfsqsgmh2vs-1password-cli-2.30.3.drv",
+      "derivation": "/nix/store/bqwdcv4i0kyahwspgfw8gxisrgqzcxgf-1password-cli-2.30.3.drv",
       "description": "1Password command-line tool",
       "install_id": "_1password",
       "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
       "name": "1password-cli-2.30.3",
       "pname": "_1password",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": true,
-      "version": "1password-cli-2.30.3",
+      "version": "2.30.3",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/l2fncs935nlzys9fx8hrbs6kg71402jj-1password-cli-2.30.3"
+        "out": "/nix/store/dl9afsjn3qqzdd90k15l4qvkrqyca08y-1password-cli-2.30.3"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
@@ -149,27 +153,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/0k41x36pkcaf28xilii9xdd8jr0a692k-bun-1.1.42.drv",
+      "derivation": "/nix/store/wg3z94w845nfnk9228fwdd4sdrpp7mi4-bun-1.2.4.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
-      "name": "bun-1.1.42",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "name": "bun-1.2.4",
       "pname": "bun",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.1.42",
+      "version": "1.2.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/5c73vw31nbji92hggrgjnfi33wzhbxk3-bun-1.1.42"
+        "out": "/nix/store/z2xy2nycxvrxywsfcqig9r5ki8qqqy7q-bun-1.2.4"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -178,27 +183,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/niz4rjw2bhlqixyh1skih3v2z9wz67sq-bun-1.1.42.drv",
+      "derivation": "/nix/store/69vrvcl3mz1nx8jns96daaljvmdjsg70-bun-1.2.4.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
-      "name": "bun-1.1.42",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "name": "bun-1.2.4",
       "pname": "bun",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.1.42",
+      "version": "1.2.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/shm69afh0zrm5r0gkpkj9l0z8l6vkpmr-bun-1.1.42"
+        "out": "/nix/store/csfwkhrpa17i5fwvwky554x7a71skmwc-bun-1.2.4"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -207,27 +213,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/gwdbmr0ynydwiz06zmh1iig2r2lhdxcl-bun-1.1.42.drv",
+      "derivation": "/nix/store/cx1nn8gyj745hr3l2wjbkdychqfnrrxy-bun-1.2.4.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
-      "name": "bun-1.1.42",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "name": "bun-1.2.4",
       "pname": "bun",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.1.42",
+      "version": "1.2.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/70nzsdr814rka1b3qaxz8b4hfk8r6wi9-bun-1.1.42"
+        "out": "/nix/store/2wf7fzkdvqdhgg366cmw4cxkx8aqr9ha-bun-1.2.4"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -236,27 +243,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/36dn5lqz7alw8yiv3w1pq6p08hzi29ac-bun-1.1.42.drv",
+      "derivation": "/nix/store/knf0fab2kp2si87mhml524p51lqrn9zc-bun-1.2.4.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=130595eba61081acde9001f43de3248d8888ac4a",
-      "name": "bun-1.1.42",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "name": "bun-1.2.4",
       "pname": "bun",
-      "rev": "130595eba61081acde9001f43de3248d8888ac4a",
-      "rev_count": 736170,
-      "rev_date": "2025-01-10T15:43:18Z",
-      "scrape_date": "2025-01-13T03:35:32Z",
+      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
+      "rev_count": 767267,
+      "rev_date": "2025-03-13T07:39:42Z",
+      "scrape_date": "2025-03-14T00:31:05Z",
       "stabilities": [
+        "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.1.42",
+      "version": "1.2.4",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/ws04zldxbkg26d4qkwyr4km1zd26mach-bun-1.1.42"
+        "out": "/nix/store/mhjlyx3f8x8xcrw7x1y1r3sqslkpjria-bun-1.2.4"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

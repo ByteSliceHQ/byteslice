@@ -20,14 +20,6 @@
     "./server": {
       "import": "./dist/server/index.js",
       "require": "./dist/server/index.cjs"
-    },
-    "./client": {
-      "import": "./dist/client/index.js",
-      "require": "./dist/client/index.cjs"
-    },
-    "./react": {
-      "import": "./dist/react/index.js",
-      "require": "./dist/react/index.cjs"
     }
   },
   "scripts": {
@@ -35,9 +27,9 @@
     "dev": "tsup --watch"
   },
   "dependencies": {
-    "@customerio/cdp-analytics-browser": "0.3.0",
-    "@customerio/cdp-analytics-node": "0.3.0",
-    "@vercel/analytics": "1.4.1"
+    "@byteslice/result": "workspace:*",
+    "@supabase/supabase-js": "2.50.0",
+    "resend": "4.5.2"
   },
   "devDependencies": {
     "@tsconfig/create-react-app": "2.0.5",
