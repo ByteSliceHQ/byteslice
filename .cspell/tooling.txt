@@ -5,3 +5,4 @@ tsup
 turborepo
 turbopack
 customerio
+supabase
