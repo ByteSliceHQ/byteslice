@@ -1,5 +1,12 @@
 # @byteslice/events
 
+## 0.6.0
+
+### Minor Changes
+
+- 293a480: Hot fix for dependencies.
+- 293a480: Replaced Customer.io with Supabase and Resend.
+
 ## 0.5.0
 
 ### Minor Changes
