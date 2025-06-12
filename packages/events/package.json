@@ -27,7 +27,7 @@
     "dev": "tsup --watch"
   },
   "dependencies": {
-    "@byteslice/result": "workspace:*",
+    "@byteslice/result": "0.2.2",
     "@supabase/supabase-js": "2.50.0",
     "resend": "4.5.2"
   },
