@@ -1,5 +1,13 @@
 # @byteslice/playground
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies [62e320e]
+- Updated dependencies [f30b745]
+  - @byteslice/events@0.7.0
+
 ## 0.2.3
 
 ### Patch Changes

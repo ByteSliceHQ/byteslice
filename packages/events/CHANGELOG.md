@@ -1,5 +1,12 @@
 # @byteslice/events
 
+## 0.7.0
+
+### Minor Changes
+
+- 62e320e: Added info and debug logger.
+- f30b745: Replaced env names for server friendly vars.
+
 ## 0.6.0
 
 ### Minor Changes
