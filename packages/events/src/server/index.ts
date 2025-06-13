@@ -3,6 +3,23 @@ import { createClient } from '@supabase/supabase-js'
 import { Resend } from 'resend'
 import type { EventProperties, PageParams } from './types'
 
+type LogLevel = 'info' | 'debug' | 'none'
+
+const LOG_LEVEL = (process.env.BYTESLICE_LOG_LEVEL || 'none') as LogLevel
+
+const logger = {
+  info: (...args: unknown[]) => {
+    if (LOG_LEVEL === 'info' || LOG_LEVEL === 'debug') {
+      console.log('[Byteslice Events]', ...args)
+    }
+  },
+  debug: (...args: unknown[]) => {
+    if (LOG_LEVEL === 'debug') {
+      console.debug('[Byteslice Events]', ...args)
+    }
+  },
+}
+
 if (
   !process.env.NEXT_PUBLIC_SUPABASE_URL ||
   !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -27,6 +44,9 @@ export function track(
 ): Promise<Result<{ id: string }, Error>> {
   return withResult(
     async () => {
+      logger.info('Tracking event:', event)
+      logger.debug('Event properties:', properties)
+
       const { data, error } = await supabase
         .from('events')
         .insert({
@@ -40,7 +60,11 @@ export function track(
         .select('id')
         .single()
 
+      logger.info('Event tracked:', data?.id)
+      logger.debug('Event data:', data)
+
       if (error) {
+        logger.debug('Error tracking event:', error)
         throw error
       }
 
@@ -61,6 +85,9 @@ export function page(
 ): Promise<Result<{ id: string }, Error>> {
   return withResult(
     async () => {
+      logger.info('Tracking page view')
+      logger.debug('Page params:', params)
+
       const { data, error } = await supabase
         .from('events')
         .insert({
@@ -72,7 +99,11 @@ export function page(
         .select('id')
         .single()
 
+      logger.info('Page view tracked:', data?.id)
+      logger.debug('Page view data:', data)
+
       if (error) {
+        logger.debug('Error tracking page view:', error)
         throw error
       }
 
@@ -98,6 +129,12 @@ export async function sendEmail(
 ): Promise<Result<{ id: string }, Error>> {
   return withResult(
     async () => {
+      logger.info('Sending email to:', params.to)
+      logger.debug('Email details:', {
+        subject: params.subject,
+        from: params.from,
+      })
+
       const { data, error } = await resend.emails.send({
         from: params.from ?? 'transactions@byteslice.co',
         to: params.to,
@@ -105,7 +142,11 @@ export async function sendEmail(
         html: params.html,
       })
 
+      logger.info('Email sent:', data?.id)
+      logger.debug('Email data:', data)
+
       if (error) {
+        logger.debug('Error sending email:', error)
         throw error
       }
 
