@@ -21,22 +21,22 @@ const logger = {
 }
 
 if (
-  !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  !process.env.BYTESLICE_SUPABASE_URL ||
+  !process.env.BYTESLICE_SUPABASE_ANON_KEY
 ) {
   throw new Error('Missing Supabase configuration')
 }
 
-if (!process.env.RESEND_API_KEY) {
+if (!process.env.BYTESLICE_RESEND_API_KEY) {
   throw new Error('Missing Resend API key')
 }
 
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  process.env.BYTESLICE_SUPABASE_URL,
+  process.env.BYTESLICE_SUPABASE_ANON_KEY,
 )
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.BYTESLICE_RESEND_API_KEY)
 
 export function track(
   event: string,
@@ -52,7 +52,7 @@ export function track(
         .insert({
           type: 'track',
           user_id: properties?.userId,
-          client_id: process.env.NEXT_PUBLIC_BYTESLICE_EVENTS_CLIENT,
+          client_id: process.env.BYTESLICE_EVENTS_CLIENT,
           event,
           properties,
           created_at: new Date().toISOString(),
@@ -92,7 +92,7 @@ export function page(
         .from('events')
         .insert({
           type: 'page',
-          client_id: process.env.NEXT_PUBLIC_BYTESLICE_EVENTS_CLIENT,
+          client_id: process.env.BYTESLICE_EVENTS_CLIENT,
           ...params,
           created_at: new Date().toISOString(),
         })
