@@ -10,12 +10,12 @@ const LOG_LEVEL = (process.env.BYTESLICE_LOG_LEVEL || 'none') as LogLevel
 const logger = {
   info: (...args: unknown[]) => {
     if (LOG_LEVEL === 'info' || LOG_LEVEL === 'debug') {
-      console.log('[Byteslice Events]', ...args)
+      console.log('[ByteSlice Events]', ...args)
     }
   },
   debug: (...args: unknown[]) => {
     if (LOG_LEVEL === 'debug') {
-      console.debug('[Byteslice Events]', ...args)
+      console.debug('[ByteSlice Events]', ...args)
     }
   },
 }
