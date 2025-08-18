@@ -7,11 +7,7 @@ type Failure<T> = {
   failure: T
 }
 
-type FailureCase = {
-  type: string
-}
-
-type FailureOption = FailureCase | Error
+type FailureOption = Error | { error: Error }
 
 export type Result<S, F extends FailureOption = Error> = Success<S> | Failure<F>
 
