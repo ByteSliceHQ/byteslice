@@ -70,31 +70,43 @@ This pattern is particularly helpful when you want to **avoid using try/catch** 
 ```ts
 import { withResult } from '@byteslice/result';
 
+// function signature does not indicate an exception may occur
 async function fetchData(): Promise<string> {
-  // Imagine this might fail
-  return "Data fetched successfully!";
+  throw new Error('The dog refused to fetch')
 }
 
 async function main() {
   const result = await withResult(
+    // operation
     () => fetchData(),
-    (error) => error // Pass the error through as-is (default)
+    // onError
+    (error) => new Error('Could not fetch data', { cause: error })
   );
 
-  if (!result.failure) {
-    console.log('Success:', result.data);
-  } else {
+  // check for failure
+  if (result.failure) {
     console.error('Failure:', result.failure);
+  } else {
+    // result is a success
+    // data property is now available
+    console.log('Success:', result.data);
   }
 }
 
 main();
 ```
 
-In this example:
-- The `fetchData` function may throw.
-- `withResult` catches any thrown exceptions and calls `onError`, returning a `failure` object if something goes wrong.
-- The caller only needs to check if `result` contains a `data` or a `failure` property.
+🔎&nbsp;&nbsp;Let's examine `withResult` further:
+- The first parameter (`operation`) wraps a function to be executed when `withResult` is called.
+  - If the provided function throws an exception, it is coerced to an error (as necessary).
+- The second parameter (`onError`) receives this error as its sole argument and returns a `FailureOption`—either an `Error` or a `FailureCase` (an object with an `error` property).
+- The `Result` returned from `withResult` depends on the result of the `operation`.
+  - If _successful_, the returned `Result` will be type `Success` and contain the output of the executed function in its `data` property.
+  - If _unsuccessful_, the returned `Result` will be type `Failure` and contain the `FailureOption` in its `failure` property.
+
+To ensure failure states are handled, the `failure` property of the `Result` must be examined before the `data` property (and its strongly-typed contents) can be accessed.
+
+> 💡 In the example above, `onError` returns a bespoke `Error` while **maintaining the stack trace** of the original error via [cause](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause). 
 
 ### Custom Failure Types
 
