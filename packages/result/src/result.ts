@@ -19,14 +19,14 @@ function ensureError(ex: unknown): Error {
 export async function withResult<S, F extends FailureOption = Error>(
   operation: () => S | Promise<S>,
   onError: (error: Error) => F,
-  hooks?: {
+  options?: {
     onException?: (ex: unknown) => Error
   },
 ): Promise<Result<S, F>> {
   try {
     return { data: await operation() }
   } catch (ex) {
-    const error = hooks?.onException?.(ex) ?? ensureError(ex)
+    const error = options?.onException?.(ex) ?? ensureError(ex)
     return { failure: onError(error) }
   }
 }
