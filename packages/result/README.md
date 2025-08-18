@@ -108,38 +108,43 @@ To ensure failure states are handled, the `failure` property of the `Result` mus
 
 > 💡 In the example above, `onError` returns a bespoke `Error` while **maintaining the stack trace** of the original error via [cause](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause). 
 
-### Custom Failure Types
+### Custom Failure
 
-By default, the failure type (`F`) is `Error`, but you can define your own custom failure structure:
+By default, the `Failure` type of `Result` contains a `failure` property of `Error`.
+
+However, you can define your own custom `failure`—as long as it is an object with an `error` property of type `Error`. This ensures the error is available, while permitting the flexibility to add any other fields.
 
 ```ts
 import { withResult, Result } from '@byteslice/result';
 
-interface MyCustomFailure {
+type CustomFailure = {
+  // required `error` property
+  error: Error;
+  // custom `type` property
   type: 'NETWORK_ERROR' | 'VALIDATION_ERROR';
-  message: string;
 }
 
-async function fetchUser(): Promise<Result<{ name: string }, MyCustomFailure>> {
-  return withResult(
+type CustomSuccess = { name: string }
+
+async function fetchUser(): Promise<Result<CustomSuccess, CustomFailure>> {
+  return await withResult(
     async () => {
-      // Potentially throwing code
-      return { name: 'Alice' };
+      // operation that may throw
+      const name = await db.getName()
+
+      return { name }
     },
-    (error) => ({
-      type: 'NETWORK_ERROR',
-      message: error.message
-    })
+    (error) => ({ error, type: 'NETWORK_ERROR' })
   );
 }
 
 async function main() {
   const result = await fetchUser();
 
-  if (!result.failure) {
-    console.log('User:', result.data.name);
+  if (result.failure) {
+    console.log('This type of error occurred:', result.failure.type);
   } else {
-    console.log('Failed with:', result.failure);
+    console.log(result.data.name);
   }
 }
 ```
