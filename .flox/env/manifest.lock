@@ -3,10 +3,6 @@
   "manifest": {
     "version": 1,
     "install": {
-      "_1password": {
-        "pkg-path": "_1password",
-        "version": "2.30.3"
-      },
       "bun": {
         "pkg-path": "bun",
         "version": "1.2.4"
@@ -15,141 +11,16 @@
     "hook": {
       "on-activate": "  echo \"📦 Installing dependencies...\"\n  bun install --frozen-lockfile\n\n  echo -e \"\\n🚀 Development Commands\"\n  echo -e \"- Run all tasks\\t\\t\\033[34mbun dev\\033[0m\"\n  echo -e \"- Start playground app\\t\\033[34mbun dev:playground\\033[0m\"\n"
     },
-    "profile": {},
     "options": {
       "systems": [
         "aarch64-darwin",
         "aarch64-linux",
         "x86_64-darwin",
         "x86_64-linux"
-      ],
-      "allow": {
-        "licenses": []
-      },
-      "semver": {}
+      ]
     }
   },
   "packages": [
-    {
-      "attr_path": "_1password",
-      "broken": false,
-      "derivation": "/nix/store/9290cl1fzxz3wzxwlwiyw5q1rnv78f3n-1password-cli-2.30.3.drv",
-      "description": "1Password command-line tool",
-      "install_id": "_1password",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "1password-cli-2.30.3",
-      "pname": "_1password",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "2.30.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/n0jgflq9hkylgfvxfrc9ris4lgbza738-1password-cli-2.30.3"
-      },
-      "system": "aarch64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "_1password",
-      "broken": false,
-      "derivation": "/nix/store/wwa0j53z5afs65r8sl9vh8689rwzjffz-1password-cli-2.30.3.drv",
-      "description": "1Password command-line tool",
-      "install_id": "_1password",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "1password-cli-2.30.3",
-      "pname": "_1password",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "2.30.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/w2qm1zj4hip9xijsnvjin2fiwqx4kdz9-1password-cli-2.30.3"
-      },
-      "system": "aarch64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "_1password",
-      "broken": false,
-      "derivation": "/nix/store/3avy67fd3w6aaxwfls2rip1s0mmmfj40-1password-cli-2.30.3.drv",
-      "description": "1Password command-line tool",
-      "install_id": "_1password",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "1password-cli-2.30.3",
-      "pname": "_1password",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "2.30.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/c00fjp4hykbgy2ddpqg8rgpc3k1mjc3z-1password-cli-2.30.3"
-      },
-      "system": "x86_64-darwin",
-      "group": "toplevel",
-      "priority": 5
-    },
-    {
-      "attr_path": "_1password",
-      "broken": false,
-      "derivation": "/nix/store/bqwdcv4i0kyahwspgfw8gxisrgqzcxgf-1password-cli-2.30.3.drv",
-      "description": "1Password command-line tool",
-      "install_id": "_1password",
-      "license": "Unfree",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "1password-cli-2.30.3",
-      "pname": "_1password",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
-      "stabilities": [
-        "staging",
-        "unstable"
-      ],
-      "unfree": true,
-      "version": "2.30.3",
-      "outputs_to_install": [
-        "out"
-      ],
-      "outputs": {
-        "out": "/nix/store/dl9afsjn3qqzdd90k15l4qvkrqyca08y-1password-cli-2.30.3"
-      },
-      "system": "x86_64-linux",
-      "group": "toplevel",
-      "priority": 5
-    },
     {
       "attr_path": "bun",
       "broken": false,
