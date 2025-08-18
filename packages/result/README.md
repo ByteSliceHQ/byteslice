@@ -8,25 +8,12 @@ This package enables developers to clearly represent both _success_ and _failure
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Motivation](#motivation)
 - [Overview](#overview)
 - [Usage](#usage)
 - [API Reference](#api-reference)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Installation
-
-```bash
-npm install @byteslice/result
-# or
-yarn add @byteslice/result
-# or
-pnpm add @byteslice/result
-# or
-bun add @byteslice/result
-```
 
 ## Motivation
 
