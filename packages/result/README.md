@@ -34,7 +34,7 @@ TypeScript—while providing excellent type safety—lacks a built-in mechanism 
 Consider the following function. While the implementation indicates that an exception could be thrown, the type signature fails to convey this information.
 ```ts
 function fetchUser(id: string): User {
-  throw new Error("Oh, no! Mr. Bill!")
+  throw new Error('Oh no, Mr. Bill!')
 }
 ```
 
@@ -50,9 +50,9 @@ Instead of an operation simply returning a value (indicating success) or throwin
 
 ## Overview
 
-`@byteslice/result` provides two key exports:
+`@byteslice/result` provides two exports:
 
-1. **`Result<S, F = Error>`** – A discriminated union type representing either:
+1. **`Result`** – A discriminated union type representing either:
    - **Success**: `{ data: S }`
    - **Failure**: `{ failure: F }`
 
@@ -61,7 +61,7 @@ Instead of an operation simply returning a value (indicating success) or throwin
    - Catches any thrown exception.
    - Returns a **success** or **failure** object rather than throwing.
 
-This pattern is particularly helpful when you want to **avoid** using try/catch directly in your code, or if you need a standardized way to capture failure details.
+This pattern is particularly helpful when you want to **avoid using try/catch** directly in your code, or if you need a standardized way to capture failure details.
 
 ## Usage
 
