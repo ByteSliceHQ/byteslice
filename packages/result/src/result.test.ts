@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'bun:test'
 import { withResult } from './result'
 
+const message = 'uh-oh'
+const error = new Error(message)
+const fallback = new Error('Something went wrong')
+
 describe('withResult', () => {
   describe.each([
     {
@@ -19,13 +23,11 @@ describe('withResult', () => {
 
       expect(result.failure).toBeUndefined()
 
-      if (!result.failure) {
+      if (result.failure === undefined) {
         expect(result.data).toBeTrue()
       }
     })
   })
-
-  const error = new Error('uh-oh')
 
   describe.each([
     {
@@ -45,6 +47,55 @@ describe('withResult', () => {
       const result = await withResult(operation, (err) => err)
 
       expect(result.failure).toEqual(error)
+      expect('data' in result).toBe(false)
+    })
+  })
+
+  describe('ensureError', () => {
+    it('should wrap non-error exception', async () => {
+      const result = await withResult(
+        () => {
+          throw message
+        },
+        (err) => err,
+      )
+
+      expect(result.failure).toEqual(fallback)
+      expect('data' in result).toBe(false)
+    })
+  })
+
+  describe('onException', () => {
+    it('should wrap non-error exception', async () => {
+      const result = await withResult(
+        () => {
+          throw message
+        },
+        (err) => err,
+        {
+          onException: (ex) => {
+            expect(ex).toBe(message)
+            return error
+          },
+        },
+      )
+
+      expect(result.failure).toEqual(error)
+      expect('data' in result).toBe(false)
+    })
+  })
+
+  describe('FailureOption', () => {
+    it('should permit custom failure', async () => {
+      const result = await withResult(
+        () => {
+          throw error
+        },
+        (err) => ({ error: err, custom: true }),
+      )
+
+      expect(result.failure).toEqual({ error: error, custom: true })
+      expect('data' in result).toBe(false)
     })
   })
 })
