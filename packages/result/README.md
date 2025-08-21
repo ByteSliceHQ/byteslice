@@ -8,25 +8,12 @@ This package enables developers to clearly represent both _success_ and _failure
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Motivation](#motivation)
 - [Overview](#overview)
 - [Usage](#usage)
 - [API Reference](#api-reference)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Installation
-
-```bash
-npm install @byteslice/result
-# or
-yarn add @byteslice/result
-# or
-pnpm add @byteslice/result
-# or
-bun add @byteslice/result
-```
 
 ## Motivation
 
@@ -47,7 +34,7 @@ TypeScript—while providing excellent type safety—lacks a built-in mechanism 
 Consider the following function. While the implementation indicates that an exception could be thrown, the type signature fails to convey this information.
 ```ts
 function fetchUser(id: string): User {
-  throw new Error("Oh, no! Mr. Bill!")
+  throw new Error('Oh no, Mr. Bill!')
 }
 ```
 
@@ -63,9 +50,9 @@ Instead of an operation simply returning a value (indicating success) or throwin
 
 ## Overview
 
-`@byteslice/result` provides two key exports:
+`@byteslice/result` provides two exports:
 
-1. **`Result<S, F = Error>`** – A discriminated union type representing either:
+1. **`Result`** – A discriminated union type representing either:
    - **Success**: `{ data: S }`
    - **Failure**: `{ failure: F }`
 
@@ -74,114 +61,137 @@ Instead of an operation simply returning a value (indicating success) or throwin
    - Catches any thrown exception.
    - Returns a **success** or **failure** object rather than throwing.
 
-This pattern is particularly helpful when you want to **avoid** using try/catch directly in your code, or if you need a standardized way to capture failure details.
+This pattern is particularly helpful when you want to **avoid using try/catch** directly in your code, or if you need a standardized way to capture failure details.
 
 ## Usage
 
 ### Basic Example
 
 ```ts
-import { withResult } from '@byteslice/result';
+import { withResult } from '@byteslice/result'
 
+// function signature does not indicate an exception may occur
 async function fetchData(): Promise<string> {
-  // Imagine this might fail
-  return "Data fetched successfully!";
+  throw new Error('The dog refused to fetch')
 }
 
 async function main() {
   const result = await withResult(
+    // operation
     () => fetchData(),
-    (error) => error // Pass the error through as-is (default)
-  );
+    // onError
+    (error) => new Error('Could not fetch data', { cause: error })
+  )
 
-  if (!result.failure) {
-    console.log('Success:', result.data);
+  // check for failure
+  if (result.failure) {
+    console.error(result.failure)
   } else {
-    console.error('Failure:', result.failure);
+    // result is a success
+    // data property is now available
+    console.log(result.data)
   }
 }
 
-main();
+main()
 ```
 
-In this example:
-- The `fetchData` function may throw.
-- `withResult` catches any thrown exceptions and calls `onError`, returning a `failure` object if something goes wrong.
-- The caller only needs to check if `result` contains a `data` or a `failure` property.
+🔎&nbsp;&nbsp;Let's examine `withResult` further:
+- The first parameter (`operation`) wraps a function to be executed when `withResult` is called.
+  - If the provided function throws an exception, it is coerced to an error (as necessary).
+- The second parameter (`onError`) receives this error as its sole argument and returns a `FailureOption`—either an `Error` or a `FailureCase` (an object with an `error` property).
+- The `Result` returned from `withResult` depends on the result of the `operation`.
+  - If _successful_, the returned `Result` will be type `Success` and contain the output of the executed function in its `data` property.
+  - If _unsuccessful_, the returned `Result` will be type `Failure` and contain the `FailureOption` in its `failure` property.
 
-### Custom Failure Types
+To ensure failure states are handled, the `failure` property of the `Result` must be examined before the `data` property (and its strongly-typed contents) can be accessed.
 
-By default, the failure type (`F`) is `Error`, but you can define your own custom failure structure:
+> 💡 In the example above, `onError` returns a bespoke `Error` while **maintaining the stack trace** of the original error via [cause](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause). 
+
+### Custom Failure
+
+By default, the `Failure` type of `Result` contains a `failure` property of `Error`.
+
+However, you can define your own custom `failure`—as long as it is an object with an `error` property of type `Error`. This ensures the error is available, while permitting the flexibility to add any other fields.
 
 ```ts
-import { withResult, Result } from '@byteslice/result';
+import { withResult, Result } from '@byteslice/result'
 
-interface MyCustomFailure {
-  type: 'NETWORK_ERROR' | 'VALIDATION_ERROR';
-  message: string;
+type CustomFailure = {
+  // required property
+  error: Error
+  // custom property
+  type: 'NETWORK_ERROR' | 'VALIDATION_ERROR'
 }
 
-async function fetchUser(): Promise<Result<{ name: string }, MyCustomFailure>> {
-  return withResult(
+type CustomSuccess = { name: string }
+
+async function fetchUser(): Promise<Result<CustomSuccess, CustomFailure>> {
+  return await withResult(
     async () => {
-      // Potentially throwing code
-      return { name: 'Alice' };
+      // function call may throw an exception
+      const name = await db.getName()
+
+      return { name }
     },
-    (error) => ({
-      type: 'NETWORK_ERROR',
-      message: error.message
-    })
-  );
+    // onError returns custom failure
+    (error) => ({ error, type: 'NETWORK_ERROR' })
+  )
 }
 
 async function main() {
-  const result = await fetchUser();
+  const result = await fetchUser()
 
-  if (!result.failure) {
-    console.log('User:', result.data.name);
+  if (result.failure) {
+    console.warn('This type of error occurred:', result.failure.type)
   } else {
-    console.log('Failed with:', result.failure);
+    console.log(result.data.name)
   }
 }
+
+main()
 ```
 
-### Using `onException` Hook
+### Hook: `onException`
 
-You can optionally provide an `onException` hook to transform or log the original exception before `onError` is called:
+You can optionally provide an `onException` hook to transform the original exception into an error before it is passed to `onError`. This is a great spot for logging or returning custom errors based on the type of exception.
 
 ```ts
-import { withResult } from '@byteslice/result';
-
-async function riskyOperation() {
-  throw new Error("Something unexpected occurred!");
-}
+import { withResult } from '@byteslice/result'
 
 async function main() {
   const result = await withResult(
+    // operation may throw an exception
     () => riskyOperation(),
-    (err) => ({ type: 'CUSTOM_FAILURE', message: err.message }),
+    // onError receives error returned from onException
+    (err) => (err),
     {
       onException: (ex) => {
-        // Log, transform, or capture `ex` before it's passed to onError
-        console.error('Caught exception:', ex);
-        return new Error('Wrapped exception details');
+        // log thrown exception
+        console.warn('Caught exception:', ex)
+
+        // return known error
+        if (err instanceof CustomError) {
+          return err
+        }
+
+        // return default error
+        return new Error('Something unexpected occurred')
       }
     }
-  );
+  )
 
-  if (!result.failure) {
-    console.log('Operation succeeded:', result.data);
+  if (result.failure) {
+    console.error(result.failure)
   } else {
-    console.warn('Operation failed:', result.failure);
+    console.log(result.data)
   }
 }
 
-main();
+main()
 ```
 
-In this scenario:
-- `onException` is called first, receiving the thrown value (`ex`), and returns an `Error`.
-- That `Error` is then passed to your `onError` function.
+If no `onException` hook is provided, then any thrown exceptions are handled by an internal `ensureError` function. As the name implies, it ensures the `onError` hook receives a valid error.
 
 ## Contributing
 
