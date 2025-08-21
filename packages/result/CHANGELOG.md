@@ -1,5 +1,12 @@
 # @byteslice/result
 
+## 0.3.0
+
+### Minor Changes
+
+- 83fe1d3: Modified failure option to permit object with `error` property.
+- 83fe1d3: Renamed optional `withResult` parameter to `options`.
+
 ## 0.2.2
 
 ### Patch Changes

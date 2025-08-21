@@ -1,5 +1,13 @@
 # @byteslice/events
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [83fe1d3]
+- Updated dependencies [83fe1d3]
+  - @byteslice/result@0.3.0
+
 ## 0.7.0
 
 ### Minor Changes

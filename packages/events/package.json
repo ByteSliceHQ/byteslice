@@ -1,6 +1,6 @@
 {
   "name": "@byteslice/events",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "homepage": "https://github.com/ByteSliceHQ/byteslice/tree/main/packages/events#readme",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "dev": "tsup --watch"
   },
   "dependencies": {
-    "@byteslice/result": "0.2.2",
+    "@byteslice/result": "0.3.0",
     "@supabase/supabase-js": "2.50.0",
     "resend": "4.5.2"
   },
