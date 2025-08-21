@@ -68,7 +68,7 @@ This pattern is particularly helpful when you want to **avoid using try/catch** 
 ### Basic Example
 
 ```ts
-import { withResult } from '@byteslice/result';
+import { withResult } from '@byteslice/result'
 
 // function signature does not indicate an exception may occur
 async function fetchData(): Promise<string> {
@@ -81,19 +81,19 @@ async function main() {
     () => fetchData(),
     // onError
     (error) => new Error('Could not fetch data', { cause: error })
-  );
+  )
 
   // check for failure
   if (result.failure) {
-    console.error('Failure:', result.failure);
+    console.error(result.failure)
   } else {
     // result is a success
     // data property is now available
-    console.log('Success:', result.data);
+    console.log(result.data)
   }
 }
 
-main();
+main()
 ```
 
 🔎&nbsp;&nbsp;Let's examine `withResult` further:
@@ -115,13 +115,13 @@ By default, the `Failure` type of `Result` contains a `failure` property of `Err
 However, you can define your own custom `failure`—as long as it is an object with an `error` property of type `Error`. This ensures the error is available, while permitting the flexibility to add any other fields.
 
 ```ts
-import { withResult, Result } from '@byteslice/result';
+import { withResult, Result } from '@byteslice/result'
 
 type CustomFailure = {
-  // required `error` property
-  error: Error;
-  // custom `type` property
-  type: 'NETWORK_ERROR' | 'VALIDATION_ERROR';
+  // required property
+  error: Error
+  // custom property
+  type: 'NETWORK_ERROR' | 'VALIDATION_ERROR'
 }
 
 type CustomSuccess = { name: string }
@@ -129,63 +129,69 @@ type CustomSuccess = { name: string }
 async function fetchUser(): Promise<Result<CustomSuccess, CustomFailure>> {
   return await withResult(
     async () => {
-      // operation that may throw
+      // function call may throw an exception
       const name = await db.getName()
 
       return { name }
     },
+    // onError returns custom failure
     (error) => ({ error, type: 'NETWORK_ERROR' })
-  );
+  )
 }
 
 async function main() {
-  const result = await fetchUser();
+  const result = await fetchUser()
 
   if (result.failure) {
-    console.log('This type of error occurred:', result.failure.type);
+    console.warn('This type of error occurred:', result.failure.type)
   } else {
-    console.log(result.data.name);
+    console.log(result.data.name)
   }
 }
+
+main()
 ```
 
-### Using `onException` Hook
+### Hook: `onException`
 
-You can optionally provide an `onException` hook to transform or log the original exception before `onError` is called:
+You can optionally provide an `onException` hook to transform the original exception into an error before it is passed to `onError`. This is a great spot for logging or returning custom errors based on the type of exception.
 
 ```ts
-import { withResult } from '@byteslice/result';
-
-async function riskyOperation() {
-  throw new Error("Something unexpected occurred!");
-}
+import { withResult } from '@byteslice/result'
 
 async function main() {
   const result = await withResult(
+    // operation may throw an exception
     () => riskyOperation(),
-    (err) => ({ type: 'CUSTOM_FAILURE', message: err.message }),
+    // onError receives error returned from onException
+    (err) => (err),
     {
       onException: (ex) => {
-        // Log, transform, or capture `ex` before it's passed to onError
-        console.error('Caught exception:', ex);
-        return new Error('Wrapped exception details');
+        // log thrown exception
+        console.warn('Caught exception:', ex)
+
+        // return known error
+        if (err instanceof CustomError) {
+          return err
+        }
+
+        // return default error
+        return new Error('Something unexpected occurred')
       }
     }
-  );
+  )
 
-  if (!result.failure) {
-    console.log('Operation succeeded:', result.data);
+  if (result.failure) {
+    console.error(result.failure)
   } else {
-    console.warn('Operation failed:', result.failure);
+    console.log(result.data)
   }
 }
 
-main();
+main()
 ```
 
-In this scenario:
-- `onException` is called first, receiving the thrown value (`ex`), and returns an `Error`.
-- That `Error` is then passed to your `onError` function.
+If no `onException` hook is provided, then any thrown exceptions are handled by an internal `ensureError` function. As the name implies, it ensures the `onError` hook receives a valid error.
 
 ## Contributing
 
