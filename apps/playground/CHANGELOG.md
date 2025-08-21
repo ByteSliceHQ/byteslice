@@ -1,5 +1,11 @@
 # @byteslice/playground
 
+## 0.2.5
+
+### Patch Changes
+
+- @byteslice/events@0.7.1
+
 ## 0.2.4
 
 ### Patch Changes
