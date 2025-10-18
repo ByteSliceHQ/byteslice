@@ -5,7 +5,7 @@
     "install": {
       "bun": {
         "pkg-path": "bun",
-        "version": "1.2.4"
+        "version": "1.3.0"
       }
     },
     "vars": {
@@ -27,28 +27,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/wg3z94w845nfnk9228fwdd4sdrpp7mi4-bun-1.2.4.drv",
+      "derivation": "/nix/store/aq1n7qzh8xjvj1wdwpmkwvwncnwv8jm4-bun-1.3.0.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "bun-1.2.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "name": "bun-1.3.0",
       "pname": "bun",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
+      "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "rev_count": 878042,
+      "rev_date": "2025-10-15T10:27:37Z",
+      "scrape_date": "2025-10-17T03:45:06.401542Z",
       "stabilities": [
         "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.2.4",
+      "version": "1.3.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/z2xy2nycxvrxywsfcqig9r5ki8qqqy7q-bun-1.2.4"
+        "out": "/nix/store/dccx7km0mm6shf1zizx760drifjbg1yr-bun-1.3.0"
       },
       "system": "aarch64-darwin",
       "group": "toplevel",
@@ -57,28 +57,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/69vrvcl3mz1nx8jns96daaljvmdjsg70-bun-1.2.4.drv",
+      "derivation": "/nix/store/pwiz9qji7rxb9lv6d760ylzq191yxck8-bun-1.3.0.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "bun-1.2.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "name": "bun-1.3.0",
       "pname": "bun",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
+      "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "rev_count": 878042,
+      "rev_date": "2025-10-15T10:27:37Z",
+      "scrape_date": "2025-10-17T04:18:54.283178Z",
       "stabilities": [
         "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.2.4",
+      "version": "1.3.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/csfwkhrpa17i5fwvwky554x7a71skmwc-bun-1.2.4"
+        "out": "/nix/store/wficmrz9bcj6rdx45jh86b2vznx0pdyb-bun-1.3.0"
       },
       "system": "aarch64-linux",
       "group": "toplevel",
@@ -87,28 +87,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/cx1nn8gyj745hr3l2wjbkdychqfnrrxy-bun-1.2.4.drv",
+      "derivation": "/nix/store/hzmsxssc2n0ch1h2008bwwi6nwmfy79p-bun-1.3.0.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "bun-1.2.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "name": "bun-1.3.0",
       "pname": "bun",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
+      "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "rev_count": 878042,
+      "rev_date": "2025-10-15T10:27:37Z",
+      "scrape_date": "2025-10-17T04:51:46.301153Z",
       "stabilities": [
         "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.2.4",
+      "version": "1.3.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/2wf7fzkdvqdhgg366cmw4cxkx8aqr9ha-bun-1.2.4"
+        "out": "/nix/store/n6jj18368id7h071j5i1zs26whgmc38y-bun-1.3.0"
       },
       "system": "x86_64-darwin",
       "group": "toplevel",
@@ -117,28 +117,28 @@
     {
       "attr_path": "bun",
       "broken": false,
-      "derivation": "/nix/store/knf0fab2kp2si87mhml524p51lqrn9zc-bun-1.2.4.drv",
+      "derivation": "/nix/store/69h7318dn0b18qf2gjm1waf9jvhja5ni-bun-1.3.0.drv",
       "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one",
       "install_id": "bun",
       "license": "[ MIT, LGPL-2.1-only ]",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "name": "bun-1.2.4",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "name": "bun-1.3.0",
       "pname": "bun",
-      "rev": "6607cf789e541e7873d40d3a8f7815ea92204f32",
-      "rev_count": 767267,
-      "rev_date": "2025-03-13T07:39:42Z",
-      "scrape_date": "2025-03-14T00:31:05Z",
+      "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
+      "rev_count": 878042,
+      "rev_date": "2025-10-15T10:27:37Z",
+      "scrape_date": "2025-10-17T05:27:14.958813Z",
       "stabilities": [
         "staging",
         "unstable"
       ],
       "unfree": false,
-      "version": "1.2.4",
+      "version": "1.3.0",
       "outputs_to_install": [
         "out"
       ],
       "outputs": {
-        "out": "/nix/store/mhjlyx3f8x8xcrw7x1y1r3sqslkpjria-bun-1.2.4"
+        "out": "/nix/store/xcl91nw8b1zihm32cwxrqdvaakdnip75-bun-1.3.0"
       },
       "system": "x86_64-linux",
       "group": "toplevel",
