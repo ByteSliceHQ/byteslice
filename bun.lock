@@ -15,9 +15,9 @@
     },
     "apps/playground": {
       "name": "@byteslice/playground",
-      "version": "0.2.3",
+      "version": "0.2.5",
       "dependencies": {
-        "@byteslice/events": "workspace:0.5.0",
+        "@byteslice/events": "workspace:0.7.1",
         "next": "15.1.3",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -28,33 +28,44 @@
         "@types/react-dom": "^19",
         "postcss": "^8",
         "tailwindcss": "^3.4.1",
-        "typescript": "^5",
+        "typescript": "catalog:code",
       },
     },
     "packages/events": {
       "name": "@byteslice/events",
-      "version": "0.6.0",
+      "version": "0.7.1",
       "dependencies": {
-        "@byteslice/result": "0.2.2",
+        "@byteslice/result": "0.3.0",
         "@supabase/supabase-js": "2.50.0",
         "resend": "4.5.2",
       },
       "devDependencies": {
         "@tsconfig/create-react-app": "2.0.5",
-        "@types/bun": "1.1.14",
-        "tsup": "8.2.4",
-        "typescript": "5.5.4",
+        "@types/bun": "catalog:types",
+        "tsup": "catalog:build",
+        "typescript": "catalog:code",
       },
     },
     "packages/result": {
       "name": "@byteslice/result",
-      "version": "0.2.2",
+      "version": "0.3.0",
       "devDependencies": {
         "@tsconfig/node20": "20.1.4",
-        "@types/bun": "1.1.14",
-        "tsup": "8.2.4",
-        "typescript": "5.5.4",
+        "@types/bun": "catalog:types",
+        "tsup": "catalog:build",
+        "typescript": "catalog:code",
       },
+    },
+  },
+  "catalogs": {
+    "build": {
+      "tsup": "8.2.4",
+    },
+    "code": {
+      "typescript": "5.5.4",
+    },
+    "types": {
+      "@types/bun": "1.1.14",
     },
   },
   "packages": {

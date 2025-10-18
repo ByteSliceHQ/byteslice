@@ -33,9 +33,9 @@
   },
   "devDependencies": {
     "@tsconfig/create-react-app": "2.0.5",
-    "@types/bun": "1.1.14",
-    "tsup": "8.2.4",
-    "typescript": "5.5.4"
+    "@types/bun": "catalog:types",
+    "tsup": "catalog:build",
+    "typescript": "catalog:code"
   },
   "publishConfig": {
     "access": "public"
