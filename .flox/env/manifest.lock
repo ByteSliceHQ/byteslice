@@ -8,6 +8,9 @@
         "version": "1.2.4"
       }
     },
+    "vars": {
+      "EDITOR": "vim"
+    },
     "hook": {
       "on-activate": "  echo \"📦 Installing dependencies...\"\n  bun install --frozen-lockfile\n\n  echo -e \"\\n🚀 Development Commands\"\n  echo -e \"- Run all tasks\\t\\t\\033[34mbun dev\\033[0m\"\n  echo -e \"- Start playground app\\t\\033[34mbun dev:playground\\033[0m\"\n"
     },

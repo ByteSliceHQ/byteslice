@@ -4,6 +4,9 @@ version = 1
 bun.pkg-path = "bun"
 bun.version = "1.2.4"
 
+[vars]
+EDITOR = "vim"
+
 [hook]
 on-activate = '''
   echo "📦 Installing dependencies..."
