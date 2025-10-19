@@ -9,10 +9,16 @@ EDITOR = "vim"
 
 [hook]
 on-activate = '''
-  echo "📦 Installing dependencies..."
+  echo "🧼 Cleaning workspace..."
+  shopt -s globstar # enable recursive globbing
+  rm -rf **/dist **/node_modules
+
+  echo -e "\n📦 Installing dependencies..."
   bun install --frozen-lockfile
 
-  echo -e "\n🚀 Development Commands"
+  echo -e "\n🚀 Done!"
+
+  echo -e "\n💻 Development Commands"
   echo -e "- Run all tasks\t\t\033[34mbun dev\033[0m"
   echo -e "- Start playground app\t\033[34mbun dev:playground\033[0m"
 '''

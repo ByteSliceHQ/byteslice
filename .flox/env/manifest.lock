@@ -12,7 +12,7 @@
       "EDITOR": "vim"
     },
     "hook": {
-      "on-activate": "  echo \"📦 Installing dependencies...\"\n  bun install --frozen-lockfile\n\n  echo -e \"\\n🚀 Development Commands\"\n  echo -e \"- Run all tasks\\t\\t\\033[34mbun dev\\033[0m\"\n  echo -e \"- Start playground app\\t\\033[34mbun dev:playground\\033[0m\"\n"
+      "on-activate": "  echo \"🧼 Cleaning workspace...\"\n  shopt -s globstar # enable recursive globbing\n  rm -rf **/dist **/node_modules\n\n  echo -e \"\\n📦 Installing dependencies...\"\n  bun install --frozen-lockfile\n\n  echo -e \"\\n🚀 Done!\"\n\n  echo -e \"\\n💻 Development Commands\"\n  echo -e \"- Run all tasks\\t\\t\\033[34mbun dev\\033[0m\"\n  echo -e \"- Start playground app\\t\\033[34mbun dev:playground\\033[0m\"\n"
     },
     "options": {
       "systems": [
