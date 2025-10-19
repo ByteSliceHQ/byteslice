@@ -14,7 +14,7 @@
         "typescript": "5.5.4"
       },
       "types": {
-        "@types/bun": "1.1.14"
+        "@types/bun": "1.2.23"
       }
     }
   },
