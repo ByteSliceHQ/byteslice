@@ -1,5 +1,11 @@
 # @byteslice/result
 
+## 0.5.0
+
+### Minor Changes
+
+- 97c41db: Added `unwrapOr`, `unwrapOrElse`, `map`, and `mapFailure` functions for extracting and transforming results.
+
 ## 0.4.0
 
 ### Minor Changes
