@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build:packages": "turbo run build --filter './packages/*'",
-    "ci:publish": "bun run build:packages && changeset publish && git push --follow-tags",
+    "ci:publish": "bun run build:packages && changeset publish",
     "ci:version": "changeset version",
     "clean": "rimraf --glob **/.turbo **/dist **/node_modules",
     "code:check": "bun install --frozen-lockfile && biome ci . & bun run sort-manifests --check & cspell --dot .",
