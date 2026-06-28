@@ -61,6 +61,73 @@ export function expect<S, F extends FailureOption = Error>(
   throw new Error(message, { cause: getError(result.failure) })
 }
 
+/**
+ * Returns the success data of a result, or a fallback value if it is a failure.
+ *
+ * Inspired by Rust's `Result::unwrap_or`, this never throws.
+ */
+export function unwrapOr<S, F extends FailureOption = Error>(
+  result: Result<S, F>,
+  fallback: S,
+): S {
+  if (isSuccess(result)) {
+    return result.data
+  }
+
+  return fallback
+}
+
+/**
+ * Returns the success data of a result, or computes a fallback from the failure.
+ *
+ * Inspired by Rust's `Result::unwrap_or_else`, this never throws and only
+ * invokes `fn` when the result is a failure.
+ */
+export function unwrapOrElse<S, F extends FailureOption = Error>(
+  result: Result<S, F>,
+  fn: (failure: F) => S,
+): S {
+  if (isSuccess(result)) {
+    return result.data
+  }
+
+  return fn(result.failure)
+}
+
+/**
+ * Transforms the success data of a result, leaving a failure untouched.
+ *
+ * Inspired by Rust's `Result::map`. The mapping function is assumed to be
+ * infallible; if it can fail, reach for `withResult` instead.
+ */
+export function map<S, U, F extends FailureOption = Error>(
+  result: Result<S, F>,
+  fn: (data: S) => U,
+): Result<U, F> {
+  if (isSuccess(result)) {
+    return { data: fn(result.data) }
+  }
+
+  return result
+}
+
+/**
+ * Transforms the failure of a result, leaving success data untouched.
+ *
+ * Inspired by Rust's `Result::map_err`. The mapped failure must itself be a
+ * valid `FailureOption` (an `Error` or an object with an `error` property).
+ */
+export function mapFailure<S, F extends FailureOption, G extends FailureOption>(
+  result: Result<S, F>,
+  fn: (failure: F) => G,
+): Result<S, G> {
+  if (isSuccess(result)) {
+    return result
+  }
+
+  return { failure: fn(result.failure) }
+}
+
 /** Wraps operation with structured result (success and failure states). */
 export async function withResult<S, F extends FailureOption = Error>(
   operation: () => S | Promise<S>,
