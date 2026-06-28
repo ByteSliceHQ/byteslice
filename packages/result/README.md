@@ -64,6 +64,12 @@ Instead of an operation simply returning a value (indicating success) or throwin
 3. **`unwrap`** / **`expect`** – Escape hatches (inspired by Rust) that return the
    success `data` directly, or throw if the `Result` is a failure.
 
+4. **`unwrapOr`** / **`unwrapOrElse`** – Total (non-throwing) extractors that return
+   the success `data`, or a fallback when the `Result` is a failure.
+
+5. **`map`** / **`mapFailure`** – Combinators (inspired by Rust) that transform the
+   success `data` or the `failure` while passing the other state through untouched.
+
 This pattern is particularly helpful when you want to **avoid using try/catch** directly in your code, or if you need a standardized way to capture failure details.
 
 ## Usage
@@ -231,6 +237,78 @@ const config = expect(result, 'config should be present')
 ```
 
 > ⚠️ Like their Rust counterparts, `unwrap` and `expect` trade type safety for convenience. Reach for them only when a failure genuinely represents an unrecoverable state.
+
+### Fallbacks: `unwrapOr` and `unwrapOrElse`
+
+When a failure should resolve to a sensible default rather than an exception, `unwrapOr` and `unwrapOrElse` return the success `data` or a fallback—and never throw.
+
+`unwrapOr` takes an eager fallback value.
+
+```ts
+import { unwrapOr, withResult } from '@byteslice/result'
+
+const result = await withResult(
+  () => loadTimeout(),
+  (error) => error,
+)
+
+// returns the loaded timeout, or 5000 on failure
+const timeout = unwrapOr(result, 5000)
+```
+
+`unwrapOrElse` takes a function that computes the fallback from the `failure`. It is only invoked when the result is a failure, making it the lazy counterpart to `unwrapOr`.
+
+```ts
+import { unwrapOrElse, withResult } from '@byteslice/result'
+
+const result = await withResult(
+  () => loadConfig(),
+  (error) => error,
+)
+
+// computes a fallback from the failure, only when needed
+const config = unwrapOrElse(result, (failure) => {
+  console.warn('Falling back to defaults:', failure.message)
+  return defaultConfig
+})
+```
+
+### Transforming: `map` and `mapFailure`
+
+`map` and `mapFailure` transform one side of a `Result` while passing the other side through untouched, letting you compose transformations without manually unpacking and re-packing the `Result`.
+
+`map` transforms the success `data`. A failure is returned unchanged, and the mapping function is not invoked.
+
+```ts
+import { map, withResult } from '@byteslice/result'
+
+const result = await withResult(
+  () => fetchUser(),
+  (error) => error,
+)
+
+// Result<User, Error> → Result<string, Error>
+const name = map(result, (user) => user.name)
+```
+
+> 💡 The mapping function is assumed to be infallible (it cannot itself fail). If your transformation may throw, wrap it in `withResult` instead.
+
+`mapFailure` transforms the `failure`. A success is returned unchanged, and the mapped failure must itself be a valid failure—either an `Error` or an object with an `error` property.
+
+```ts
+import { mapFailure, withResult } from '@byteslice/result'
+
+const result = await withResult(
+  () => fetchUser(),
+  (error) => error,
+)
+
+// enrich the failure with additional context
+const tagged = mapFailure(result, (error) => ({
+  error,
+  type: 'NETWORK_ERROR' as const,
+}))
+```
 
 ## Contributing
 

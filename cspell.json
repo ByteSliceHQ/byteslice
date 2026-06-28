@@ -18,5 +18,5 @@
     ".next",
     ".gitignore"
   ],
-  "words": ["byteslice"]
+  "words": ["byteslice", "combinator", "combinators"]
 }
