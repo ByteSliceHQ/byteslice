@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'bun:test'
-import { withResult } from './result'
+import {
+  type Result,
+  expect as expectResult,
+  unwrap,
+  withResult,
+} from './result'
 
 const message = 'uh-oh'
 const error = new Error(message)
@@ -97,5 +102,53 @@ describe('withResult', () => {
       expect(result.failure).toEqual({ error: error, custom: true })
       expect('data' in result).toBe(false)
     })
+  })
+})
+
+describe('unwrap', () => {
+  it('should return data for a success', () => {
+    const result: Result<boolean> = { data: true }
+
+    expect(unwrap(result)).toBeTrue()
+  })
+
+  it('should throw the underlying error for a failure', () => {
+    const result: Result<boolean> = { failure: error }
+
+    expect(() => unwrap(result)).toThrow(error)
+  })
+
+  it('should throw the underlying error of a custom failure', () => {
+    const result: Result<boolean, { error: Error; custom: boolean }> = {
+      failure: { error, custom: true },
+    }
+
+    expect(() => unwrap(result)).toThrow(error)
+  })
+})
+
+describe('expect', () => {
+  it('should return data for a success', () => {
+    const result: Result<boolean> = { data: true }
+
+    expect(expectResult(result, message)).toBeTrue()
+  })
+
+  it('should throw an error with the provided message for a failure', () => {
+    const result: Result<boolean> = { failure: error }
+
+    expect(() => expectResult(result, message)).toThrow(message)
+  })
+
+  it('should preserve the underlying error as the cause', () => {
+    const result: Result<boolean> = { failure: error }
+
+    try {
+      expectResult(result, message)
+      expect.unreachable()
+    } catch (ex) {
+      expect(ex).toBeInstanceOf(Error)
+      expect((ex as Error).cause).toBe(error)
+    }
   })
 })

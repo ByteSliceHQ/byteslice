@@ -50,7 +50,7 @@ Instead of an operation simply returning a value (indicating success) or throwin
 
 ## Overview
 
-`@byteslice/result` provides two exports:
+`@byteslice/result` provides the following exports:
 
 1. **`Result`** – A discriminated union type representing either:
    - **Success**: `{ data: S }`
@@ -60,6 +60,9 @@ Instead of an operation simply returning a value (indicating success) or throwin
    - Executes a provided operation.
    - Catches any thrown exception.
    - Returns a **success** or **failure** object rather than throwing.
+
+3. **`unwrap`** / **`expect`** – Escape hatches (inspired by Rust) that return the
+   success `data` directly, or throw if the `Result` is a failure.
 
 This pattern is particularly helpful when you want to **avoid using try/catch** directly in your code, or if you need a standardized way to capture failure details.
 
@@ -192,6 +195,42 @@ main()
 ```
 
 If no `onException` hook is provided, then any thrown exceptions are handled by an internal `ensureError` function. As the name implies, it ensures the `onError` hook receives a valid error.
+
+### Unwrapping: `unwrap` and `expect`
+
+Inspecting the `failure` property is the safe, type-driven way to consume a `Result`. Occasionally, however, you _know_ an operation should have succeeded and simply want the underlying `data`—treating any failure as an exceptional, program-halting event.
+
+Borrowing from [Rust's `Result`](https://doc.rust-lang.org/std/result/enum.Result.html), `unwrap` and `expect` provide this escape hatch.
+
+`unwrap` returns the success `data`, or re-throws the failure's underlying error.
+
+```ts
+import { unwrap, withResult } from '@byteslice/result'
+
+const result = await withResult(
+  () => fetchData(),
+  (error) => error,
+)
+
+// returns the data on success, or throws the underlying error on failure
+const data = unwrap(result)
+```
+
+`expect` behaves the same, but lets you describe _why_ a success was expected. On failure it throws an `Error` with your message, preserving the original error via [cause](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause).
+
+```ts
+import { expect, withResult } from '@byteslice/result'
+
+const result = await withResult(
+  () => loadConfig(),
+  (error) => error,
+)
+
+// throws `Error('config should be present', { cause: <original error> })` on failure
+const config = expect(result, 'config should be present')
+```
+
+> ⚠️ Like their Rust counterparts, `unwrap` and `expect` trade type safety for convenience. Reach for them only when a failure genuinely represents an unrecoverable state.
 
 ## Contributing
 
