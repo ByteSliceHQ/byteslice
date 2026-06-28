@@ -1,5 +1,11 @@
 # @byteslice/result
 
+## 0.4.0
+
+### Minor Changes
+
+- 0967506: Added `unwrap` and `expect` functions for extracting success data from a result.
+
 ## 0.3.0
 
 ### Minor Changes
